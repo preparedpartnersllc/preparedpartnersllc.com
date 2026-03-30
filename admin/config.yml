@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Fire Prevention", value: "fire" }
+          - { label: "Emergency Management", value: "em" }
+          - { label: "OSHA Compliance", value: "osha" }
+          - { label: "Insurance", value: "ins" }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Short description shown on blog listing page (1-2 sentences)" }
+      - { label: "Read Time (e.g. 5 min read)", name: "readtime", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
