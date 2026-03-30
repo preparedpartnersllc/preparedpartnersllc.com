@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "date", format: "MMMM D, YYYY", dateFormat: "MMMM D, YYYY", timeFormat: false }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "MMMM D, YYYY", dateFormat: "MMMM D, YYYY", timeFormat: false }
       - label: "Category"
         name: "category"
         widget: "select"
