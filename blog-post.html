@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Prepared Partners LLC</title>
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy:#1A3328; --navy-2:#244D3A; --orange:#B8962E; --orange-2:#D4AF4A;
+      --cream:#FAF8F3; --warm:#F2EFE8; --border:#E2DDD4; --gray:#666660;
+      --dark:#1E1E1A; --white:#FFFFFF; --max:720px; --pad:clamp(20px,5vw,60px);
+    }
+    body { font-family:'Inter',sans-serif; color:var(--dark); background:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+
+    /* NAV */
+    nav { background:var(--navy); border-bottom:3px solid var(--orange); position:sticky; top:0; z-index:99; }
+    .nav-inner { max-width:1060px; margin:0 auto; padding:0 var(--pad); height:64px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    .nav-link { font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.18s; }
+    .nav-link:hover,.nav-link.active { color:var(--orange); }
+    .nav-btn { font-size:0.82rem; font-weight:600; background:var(--orange); color:var(--white); padding:10px 22px; border-radius:4px; text-decoration:none; transition:background 0.18s; }
+    .nav-btn:hover { background:var(--orange-2); }
+    @media(max-width:760px){.nav-link{display:none;}}
+
+    /* LOADING */
+    .loading { text-align:center; padding:80px 20px; color:var(--gray); font-size:0.95rem; }
+
+    /* ARTICLE */
+    .article-wrap { max-width:var(--max); margin:0 auto; padding:clamp(40px,7vw,80px) var(--pad); }
+
+    .back-link { display:inline-flex; align-items:center; gap:6px; font-size:0.82rem; color:var(--gray); text-decoration:none; margin-bottom:32px; transition:color 0.18s; }
+    .back-link:hover { color:var(--orange); }
+
+    .cat-badge { font-size:0.63rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:3px 10px; border-radius:100px; display:inline-block; margin-bottom:16px; }
+    .cat-fire{background:#FAECE7;color:#993C1D;} .cat-em{background:#E1F5EE;color:#0F6E56;} .cat-osha{background:#E6F1FB;color:#185FA5;} .cat-ins{background:#FAEEDA;color:#854F0B;}
+
+    .article-title { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:var(--dark); line-height:1.2; margin-bottom:16px; }
+
+    .article-meta { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:32px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+    .meta-author { font-size:0.85rem; font-weight:600; color:var(--navy); }
+    .meta-sep { color:var(--border); }
+    .meta-date,.meta-read { font-size:0.82rem; color:var(--gray); }
+
+    .article-thumb { width:100%; border-radius:8px; margin-bottom:36px; display:block; }
+
+    /* ARTICLE BODY */
+    .article-body { font-size:1.05rem; line-height:1.85; color:var(--dark); }
+    .article-body h1,.article-body h2 { font-family:'Playfair Display',Georgia,serif; font-weight:700; color:var(--navy); margin:40px 0 16px; line-height:1.25; }
+    .article-body h1 { font-size:1.8rem; }
+    .article-body h2 { font-size:1.4rem; }
+    .article-body h3 { font-size:1.1rem; font-weight:600; color:var(--navy); margin:28px 0 12px; }
+    .article-body p { margin-bottom:20px; }
+    .article-body ul,.article-body ol { margin:0 0 20px 24px; }
+    .article-body li { margin-bottom:8px; }
+    .article-body strong { font-weight:600; color:var(--dark); }
+    .article-body em { font-style:italic; }
+    .article-body blockquote { border-left:4px solid var(--orange); padding:16px 20px; margin:28px 0; background:var(--warm); border-radius:0 4px 4px 0; font-style:italic; color:var(--gray); }
+    .article-body a { color:var(--orange); text-decoration:underline; }
+    .article-body a:hover { color:var(--orange-2); }
+    .article-body hr { border:none; border-top:1px solid var(--border); margin:36px 0; }
+    .article-body code { background:var(--warm); padding:2px 6px; border-radius:3px; font-size:0.9em; }
+
+    /* CTA */
+    .article-cta { background:var(--navy); border-radius:8px; padding:36px 32px; margin-top:56px; text-align:center; }
+    .article-cta h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.4rem; font-weight:700; color:var(--white); margin-bottom:10px; }
+    .article-cta p { font-size:0.875rem; color:rgba(255,255,255,0.55); line-height:1.7; margin-bottom:20px; }
+    .article-cta a { display:inline-block; font-size:0.875rem; font-weight:600; background:var(--orange); color:var(--white); padding:13px 28px; border-radius:4px; text-decoration:none; transition:background 0.18s; }
+    .article-cta a:hover { background:var(--orange-2); }
+
+    /* FOOTER */
+    footer { background:var(--navy); padding:clamp(32px,5vw,56px) var(--pad); margin-top:0; }
+    .foot-inner { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; }
+    .foot-brand { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:8px; }
+    .foot-brand em { color:var(--orange); font-style:normal; }
+    .foot-desc { font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.65; }
+    .foot-col-title { font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .foot-links { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .foot-links a { font-size:0.82rem; color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.18s; }
+    .foot-links a:hover { color:var(--white); }
+    .foot-bottom { max-width:1060px; margin:28px auto 0; padding-top:22px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+    .foot-copy,.foot-creds { font-size:0.73rem; color:rgba(255,255,255,0.25); }
+    @media(max-width:760px){.foot-inner{grid-template-columns:1fr 1fr;}}
+    @media(max-width:500px){.foot-inner{grid-template-columns:1fr;}.foot-bottom{flex-direction:column;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="height:52px;width:52px;flex-shrink:0;">
+        <rect x="0" y="0" width="60" height="60" fill="#B8962E"/>
+        <text x="30" y="47" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#1A3328" text-anchor="middle" dominant-baseline="auto">P</text>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#F5F0E8;letter-spacing:0.05em;">PREPARED</span>
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#B8962E;letter-spacing:0.05em;">PARTNERS</span>
+        <span style="font-family:'Inter',sans-serif;font-size:0.5rem;color:#B8962E;letter-spacing:0.2em;opacity:0.8;margin-top:2px;">LLC</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+      <a class="nav-btn" href="/#contact">Get Your EAP</a>
+    </div>
+  </div>
+</nav>
+
+<div id="loading" class="loading">Loading article...</div>
+
+<div id="article-wrap" class="article-wrap" style="display:none;">
+  <a href="blog.html" class="back-link">← Back to Blog</a>
+  <span id="cat-badge" class="cat-badge"></span>
+  <h1 id="article-title" class="article-title"></h1>
+  <div class="article-meta">
+    <span class="meta-author">Anthony Watts · Prepared Partners LLC</span>
+    <span class="meta-sep">·</span>
+    <span id="meta-date" class="meta-date"></span>
+    <span class="meta-sep">·</span>
+    <span id="meta-read" class="meta-read"></span>
+  </div>
+  <img id="article-thumb" class="article-thumb" style="display:none;" alt="" />
+  <div id="article-body" class="article-body"></div>
+  <div class="article-cta">
+    <h3>Need an Emergency Action Plan?</h3>
+    <p>We write fully customized, OSHA-compliant EAPs for businesses and schools nationwide. Flat-fee pricing. Free discovery call to get started.</p>
+    <a href="/#contact">Request Your Free Discovery Call →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Prepared <em>Partners</em> LLC</p>
+      <p class="foot-desc">Emergency Action Plan Consulting<br>Nationwide · Based in Southfield, Michigan</p>
+    </div>
+    <div>
+      <p class="foot-col-title">Services</p>
+      <ul class="foot-links">
+        <li><a href="/#services">Emergency Action Plan Writing</a></li>
+        <li><a href="/#services">Incident Action Plan Development</a></li>
+        <li><a href="/#services">Emergency Preparedness Training</a></li>
+        <li><a href="/#services">Exercises &amp; Drills</a></li>
+        <li><a href="/#services">Ongoing Plan Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-col-title">Navigate</p>
+      <ul class="foot-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="/#contact">Get Your EAP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-copy">© 2025 Prepared Partners LLC · All rights reserved · Southfield, Michigan</p>
+    <p class="foot-creds">CFI-I · CFI-II · Plans Examiner I · Planning Section Chief · 9 Years Detroit Fire Department</p>
+  </div>
+</footer>
+
+<script>
+  const GITHUB_USER = 'preparedpartnersllc';
+  const GITHUB_REPO = 'preparedpartnersllc.com';
+  const POSTS_PATH = '_posts';
+
+  const catLabels = { fire:'Fire Prevention', em:'Emergency Management', osha:'OSHA Compliance', ins:'Insurance' };
+  const catColors = { fire:'cat-fire', em:'cat-em', osha:'cat-osha', ins:'cat-ins' };
+
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+    if (!match) return { body: text };
+    const fm = {};
+    match[1].split('\n').forEach(line => {
+      const col = line.indexOf(':');
+      if (col === -1) return;
+      const key = line.slice(0, col).trim();
+      let val = line.slice(col + 1).trim().replace(/^["']|["']$/g, '');
+      fm[key] = val;
+    });
+    fm.body = match[2];
+    return fm;
+  }
+
+  function formatDate(str) {
+    if (!str) return '';
+    try {
+      const d = new Date(str);
+      return d.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+    } catch(e) { return str; }
+  }
+
+  async function loadPost() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('post');
+    if (!slug) { document.getElementById('loading').innerHTML = 'Post not found.'; return; }
+
+    try {
+      const url = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/${POSTS_PATH}/${slug}.md`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Not found');
+      const text = await res.text();
+      const post = parseFrontmatter(text);
+
+      // Set page title
+      document.title = `${post.title || 'Article'} | Prepared Partners LLC`;
+
+      // Category badge
+      const cat = post.category || 'em';
+      const badge = document.getElementById('cat-badge');
+      badge.textContent = catLabels[cat] || 'Emergency Management';
+      badge.className = `cat-badge ${catColors[cat] || 'cat-em'}`;
+
+      // Title
+      document.getElementById('article-title').textContent = post.title || '';
+
+      // Meta
+      document.getElementById('meta-date').textContent = formatDate(post.date);
+      document.getElementById('meta-read').textContent = post.readtime || '5 min read';
+
+      // Thumbnail
+      if (post.thumbnail) {
+        const thumb = document.getElementById('article-thumb');
+        thumb.src = post.thumbnail;
+        thumb.alt = post.title || '';
+        thumb.style.display = 'block';
+      }
+
+      // Body
+      document.getElementById('article-body').innerHTML = marked.parse(post.body || '');
+
+      // Show article
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('article-wrap').style.display = 'block';
+
+    } catch(e) {
+      document.getElementById('loading').innerHTML = 'Article not found. <a href="blog.html">← Back to Blog</a>';
+    }
+  }
+
+  loadPost();
+</script>
+</body>
+</html>
