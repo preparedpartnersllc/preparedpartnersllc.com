@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Resources | Prepared Partners LLC</title>
+  <meta name="description" content="Free emergency preparedness and fire prevention resources — checklists, templates, guides, and more from Prepared Partners LLC." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://preparedpartnersllc.com/resources.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy:#1A3328; --navy-2:#244D3A; --orange:#B8962E; --orange-2:#D4AF4A;
+      --cream:#FAF8F3; --warm:#F2EFE8; --border:#E2DDD4; --gray:#666660;
+      --dark:#1E1E1A; --white:#FFFFFF; --max:1060px; --pad:clamp(20px,5vw,60px);
+    }
+    body { font-family:'Inter',sans-serif; color:var(--dark); background:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+
+    /* NAV */
+    nav { background:var(--navy); border-bottom:3px solid var(--orange); position:sticky; top:0; z-index:99; }
+    .nav-inner { max-width:var(--max); margin:0 auto; padding:0 var(--pad); height:64px; display:flex; align-items:center; justify-content:space-between; }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    .nav-link { font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.7); text-decoration:none; transition:color 0.18s; }
+    .nav-link:hover,.nav-link.active { color:var(--orange); }
+    .nav-btn { font-size:0.82rem; font-weight:600; background:var(--orange); color:var(--white); padding:10px 22px; border-radius:4px; text-decoration:none; transition:background 0.18s; }
+    .nav-btn:hover { background:var(--orange-2); }
+    @media(max-width:760px){.nav-link{display:none;}}
+
+    /* HERO */
+    .hero { background:var(--navy); padding:clamp(40px,7vw,80px) var(--pad); }
+    .hero-inner { max-width:var(--max); margin:0 auto; }
+    .eyebrow { font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); display:block; margin-bottom:12px; }
+    .hero h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:var(--white); line-height:1.2; margin-bottom:14px; }
+    .hero p { font-size:1rem; color:rgba(255,255,255,0.6); font-weight:300; max-width:560px; line-height:1.8; }
+
+    /* MAIN */
+    .main { max-width:var(--max); margin:0 auto; padding:clamp(40px,6vw,72px) var(--pad); }
+
+    /* FOLDER TABS */
+    .folder-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+    .folder-tab { font-size:0.82rem; font-weight:500; padding:8px 18px; border-radius:4px; border:1px solid var(--border); background:var(--white); color:var(--gray); cursor:pointer; transition:all 0.18s; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:7px; }
+    .folder-tab:hover { border-color:var(--orange); color:var(--orange); }
+    .folder-tab.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
+    .folder-tab .count { font-size:0.68rem; background:rgba(255,255,255,0.15); padding:1px 7px; border-radius:100px; }
+    .folder-tab:not(.active) .count { background:var(--warm); color:var(--gray); }
+
+    /* RESOURCE GRID */
+    .resource-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+
+    /* RESOURCE CARD */
+    .resource-card { background:var(--white); border:1px solid var(--border); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; transition:box-shadow 0.2s; }
+    .resource-card:hover { box-shadow:0 4px 18px rgba(0,0,0,0.08); }
+
+    /* PREVIEW */
+    .resource-preview { width:100%; height:160px; background:var(--warm); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; cursor:pointer; }
+    .resource-preview img { width:100%; height:100%; object-fit:cover; }
+    .resource-preview .preview-icon { font-size:3rem; }
+    .preview-overlay { position:absolute; inset:0; background:rgba(26,51,40,0.7); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s; }
+    .resource-preview:hover .preview-overlay { opacity:1; }
+    .preview-overlay span { color:var(--white); font-size:0.82rem; font-weight:600; letter-spacing:0.05em; }
+
+    .file-type-badge { position:absolute; top:10px; right:10px; font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
+    .type-pdf { background:#E53935; color:var(--white); }
+    .type-ppt { background:#D84315; color:var(--white); }
+    .type-doc { background:#1565C0; color:var(--white); }
+    .type-img { background:#558B2F; color:var(--white); }
+    .type-xls { background:#2E7D32; color:var(--white); }
+    .type-zip { background:#6A1B9A; color:var(--white); }
+
+    .resource-body { padding:16px; flex:1; }
+    .resource-folder { font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:6px; }
+    .resource-body h3 { font-size:0.92rem; font-weight:600; color:var(--dark); line-height:1.35; margin-bottom:6px; }
+    .resource-body p { font-size:0.8rem; color:var(--gray); line-height:1.6; }
+
+    .resource-footer { padding:12px 16px; border-top:1px solid var(--border); }
+    .download-btn { width:100%; font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; background:var(--navy); color:var(--white); border:none; border-radius:4px; padding:10px; cursor:pointer; transition:background 0.18s; display:flex; align-items:center; justify-content:center; gap:7px; }
+    .download-btn:hover { background:var(--navy-2); }
+
+    /* MODAL OVERLAY */
+    .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:200; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:var(--white); border-radius:8px; width:100%; max-width:480px; padding:36px 32px; position:relative; }
+    .modal-close { position:absolute; top:14px; right:16px; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--gray); line-height:1; }
+    .modal-close:hover { color:var(--dark); }
+    .modal h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .modal p { font-size:0.85rem; color:var(--gray); margin-bottom:20px; line-height:1.6; }
+    .modal-resource-name { font-size:0.8rem; font-weight:600; color:var(--orange); margin-bottom:20px; display:block; }
+    .modal input { width:100%; font-family:'Inter',sans-serif; font-size:0.875rem; padding:11px 14px; border:1.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--dark); outline:none; margin-bottom:12px; transition:border-color 0.18s; }
+    .modal input:focus { border-color:var(--navy); }
+    .modal input::placeholder { color:#C0C0C0; }
+    .modal-submit { width:100%; font-family:'Inter',sans-serif; font-size:0.9rem; font-weight:600; background:var(--orange); color:var(--white); border:none; border-radius:4px; padding:13px; cursor:pointer; transition:background 0.18s; }
+    .modal-submit:hover { background:var(--orange-2); }
+    .modal-note { font-size:0.72rem; color:#AAAAAA; text-align:center; margin-top:10px; font-style:italic; }
+
+    /* PREVIEW MODAL */
+    .preview-modal { background:var(--white); border-radius:8px; width:100%; max-width:720px; max-height:80vh; overflow:auto; position:relative; }
+    .preview-modal-inner { padding:24px; }
+    .preview-modal h3 { font-size:1.1rem; font-weight:600; color:var(--navy); margin-bottom:16px; padding-right:32px; }
+    .preview-modal img { width:100%; border-radius:4px; }
+    .preview-modal-placeholder { height:300px; background:var(--warm); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
+    .preview-modal-placeholder .big-icon { font-size:4rem; }
+    .preview-modal-placeholder p { font-size:0.85rem; color:var(--gray); }
+    .preview-modal-actions { display:flex; gap:10px; margin-top:16px; }
+    .preview-dl-btn { flex:1; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600; background:var(--navy); color:var(--white); border:none; border-radius:4px; padding:11px; cursor:pointer; transition:background 0.18s; }
+    .preview-dl-btn:hover { background:var(--navy-2); }
+    .preview-cancel-btn { font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:500; background:transparent; color:var(--gray); border:1px solid var(--border); border-radius:4px; padding:11px 18px; cursor:pointer; }
+
+    /* EMPTY */
+    .empty { text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
+
+    /* HIDDEN NETLIFY FORM */
+    .netlify-hidden { display:none; }
+
+    /* NO RESULTS */
+    .no-results { display:none; text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
+
+    /* FOOTER */
+    footer { background:var(--navy); padding:clamp(32px,5vw,56px) var(--pad); }
+    .foot-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; }
+    .foot-brand { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:8px; }
+    .foot-brand em { color:var(--orange); font-style:normal; }
+    .foot-desc { font-size:0.78rem; color:rgba(255,255,255,0.35); line-height:1.65; }
+    .foot-col-title { font-size:0.65rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .foot-links { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .foot-links a { font-size:0.82rem; color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.18s; }
+    .foot-links a:hover { color:var(--white); }
+    .foot-bottom { max-width:var(--max); margin:28px auto 0; padding-top:22px; border-top:1px solid rgba(255,255,255,0.07); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+    .foot-copy,.foot-creds { font-size:0.73rem; color:rgba(255,255,255,0.25); }
+
+    @media(max-width:900px){ .resource-grid{grid-template-columns:1fr 1fr;} .foot-inner{grid-template-columns:1fr 1fr;} }
+    @media(max-width:580px){ .resource-grid{grid-template-columns:1fr;} .foot-inner{grid-template-columns:1fr;} .foot-bottom{flex-direction:column;} }
+  </style>
+</head>
+<body>
+
+<!-- Hidden Netlify form for form detection -->
+<form name="resource-download" netlify netlify-honeypot="bot-field" class="netlify-hidden">
+  <input type="hidden" name="form-name" value="resource-download" />
+  <input type="text" name="bot-field" />
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="text" name="resource" />
+</form>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="height:52px;width:52px;flex-shrink:0;">
+        <rect x="0" y="0" width="60" height="60" fill="#B8962E"/>
+        <text x="30" y="47" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#1A3328" text-anchor="middle" dominant-baseline="auto">P</text>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#F5F0E8;letter-spacing:0.05em;">PREPARED</span>
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#B8962E;letter-spacing:0.05em;">PARTNERS</span>
+        <span style="font-family:'Inter',sans-serif;font-size:0.5rem;color:#B8962E;letter-spacing:0.2em;opacity:0.8;margin-top:2px;">LLC</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="resources.html" class="nav-link active">Resources</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+      <a class="nav-btn" href="/#contact">Get Your EAP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Free Resources</span>
+    <h1>Tools, Templates &amp; Checklists — No Cost</h1>
+    <p>Download free emergency preparedness and fire prevention resources built from real field experience. Enter your email and get instant access.</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="folder-tabs" id="folder-tabs"></div>
+  <div class="resource-grid" id="resource-grid">
+    <div class="empty" id="loading-msg">Loading resources...</div>
+  </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="email-modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">×</button>
+    <h3>Get Your Free Download</h3>
+    <p>Enter your name and email for instant access. We'll also send you occasional tips on emergency preparedness and fire safety — unsubscribe anytime.</p>
+    <span class="modal-resource-name" id="modal-resource-name"></span>
+    <form id="download-form" name="resource-download" method="POST" action="/resources.html">
+      <input type="hidden" name="form-name" value="resource-download" />
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="resource" id="form-resource-name" />
+      <input type="text" name="name" placeholder="Your Name *" required />
+      <input type="email" name="email" placeholder="Your Email *" required />
+      <button type="submit" class="modal-submit">Get Free Download →</button>
+      <p class="modal-note">We never share your information.</p>
+    </form>
+  </div>
+</div>
+
+<!-- PREVIEW MODAL -->
+<div class="modal-overlay" id="preview-modal">
+  <div class="preview-modal">
+    <div class="preview-modal-inner">
+      <button class="modal-close" id="preview-close">×</button>
+      <h3 id="preview-title"></h3>
+      <div id="preview-content"></div>
+      <div class="preview-modal-actions">
+        <button class="preview-dl-btn" id="preview-dl-btn">Download This Resource →</button>
+        <button class="preview-cancel-btn" id="preview-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Prepared <em>Partners</em> LLC</p>
+      <p class="foot-desc">Emergency Action Plan Consulting<br>Nationwide · Based in Southfield, Michigan</p>
+    </div>
+    <div>
+      <p class="foot-col-title">Services</p>
+      <ul class="foot-links">
+        <li><a href="/#services">Emergency Action Plan Writing</a></li>
+        <li><a href="/#services">Incident Action Plan Development</a></li>
+        <li><a href="/#services">Emergency Preparedness Training</a></li>
+        <li><a href="/#services">Exercises &amp; Drills</a></li>
+        <li><a href="/#services">Ongoing Plan Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-col-title">Navigate</p>
+      <ul class="foot-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="/#contact">Get Your EAP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-copy">© 2025 Prepared Partners LLC · All rights reserved · Southfield, Michigan</p>
+    <p class="foot-creds">CFI-I · CFI-II · Plans Examiner I · Planning Section Chief · 9 Years Detroit Fire Department</p>
+  </div>
+</footer>
+
+<script>
+  // ── RESOURCE DATA ──
+  // This is where your resources live. Add, remove, and reorder by editing this array.
+  // To add a resource: copy one object, fill in the fields, add to the array.
+  // "order" controls position within a folder (lower = first).
+  // "file" is the URL to the actual file (GitHub raw URL or any direct link).
+  // "preview" is optional — use an image URL for a visual preview.
+
+  const resources = [
+    {
+      id: 1,
+      title: "Emergency Action Plan Checklist",
+      description: "A step-by-step checklist to assess whether your current EAP meets OSHA 29 CFR 1910.38 requirements.",
+      folder: "EAP Templates",
+      type: "pdf",
+      file: "#", // Replace with actual file URL
+      preview: null,
+      order: 1
+    },
+    {
+      id: 2,
+      title: "Fire Evacuation Route Template",
+      description: "Customizable evacuation route template for commercial facilities. Fill in your floor plan and post throughout your building.",
+      folder: "Fire Prevention",
+      type: "pdf",
+      file: "#",
+      preview: null,
+      order: 1
+    },
+    {
+      id: 3,
+      title: "Tabletop Exercise Facilitator Guide",
+      description: "Step-by-step guide for running an effective tabletop exercise with your leadership team. No outside facilitator needed.",
+      folder: "Training Materials",
+      type: "ppt",
+      file: "#",
+      preview: null,
+      order: 1
+    },
+    {
+      id: 4,
+      title: "OSHA EAP Requirements Summary Sheet",
+      description: "One-page summary of what OSHA 29 CFR 1910.38 requires. Print and share with your leadership team.",
+      folder: "EAP Templates",
+      type: "pdf",
+      file: "#",
+      preview: null,
+      order: 2
+    },
+    {
+      id: 5,
+      title: "Emergency Contact Information Sheet",
+      description: "Template for documenting all emergency contacts, utility shutoffs, and key personnel. Post at every workstation.",
+      folder: "EAP Templates",
+      type: "pdf",
+      file: "#",
+      preview: null,
+      order: 3
+    },
+    {
+      id: 6,
+      title: "Fire Hazard Self-Inspection Checklist",
+      description: "Monthly fire hazard inspection checklist for commercial properties. Identify and correct common violations before an inspector does.",
+      folder: "Fire Prevention",
+      type: "pdf",
+      file: "#",
+      preview: null,
+      order: 2
+    }
+  ];
+
+  // ── FILE TYPE CONFIG ──
+  const typeConfig = {
+    pdf:  { label:'PDF',  badge:'type-pdf', icon:'📄' },
+    ppt:  { label:'PPT',  badge:'type-ppt', icon:'📊' },
+    doc:  { label:'DOC',  badge:'type-doc', icon:'📝' },
+    img:  { label:'IMG',  badge:'type-img', icon:'🖼' },
+    xls:  { label:'XLS',  badge:'type-xls', icon:'📈' },
+    zip:  { label:'ZIP',  badge:'type-zip', icon:'📦' }
+  };
+
+  // ── STATE ──
+  let currentFolder = 'all';
+  let pendingDownload = null;
+
+  // ── BUILD FOLDERS ──
+  function getFolders() {
+    const folders = ['All'];
+    resources.forEach(r => { if (!folders.includes(r.folder)) folders.push(r.folder); });
+    return folders;
+  }
+
+  function countFolder(folder) {
+    if (folder === 'All') return resources.length;
+    return resources.filter(r => r.folder === folder).length;
+  }
+
+  function renderFolderTabs() {
+    const tabs = document.getElementById('folder-tabs');
+    tabs.innerHTML = getFolders().map(folder => `
+      <button class="folder-tab ${folder === 'All' ? 'active' : ''}" data-folder="${folder}">
+        📁 ${folder} <span class="count">${countFolder(folder)}</span>
+      </button>`).join('');
+    tabs.querySelectorAll('.folder-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.querySelectorAll('.folder-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFolder = btn.dataset.folder;
+        renderGrid();
+      });
+    });
+  }
+
+  // ── BUILD GRID ──
+  function getFiltered() {
+    let filtered = currentFolder === 'All' ? [...resources] : resources.filter(r => r.folder === currentFolder);
+    return filtered.sort((a,b) => a.order - b.order);
+  }
+
+  function renderGrid() {
+    const grid = document.getElementById('resource-grid');
+    const filtered = getFiltered();
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty">No resources in this folder yet.</div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(r => {
+      const t = typeConfig[r.type] || { label:'FILE', badge:'type-pdf', icon:'📄' };
+      const previewArea = r.preview
+        ? `<img src="${r.preview}" alt="${r.title}" style="width:100%;height:100%;object-fit:cover;" />`
+        : `<div class="preview-icon">${t.icon}</div>`;
+      return `
+        <div class="resource-card" data-id="${r.id}">
+          <div class="resource-preview" onclick="openPreview(${r.id})">
+            ${previewArea}
+            <span class="file-type-badge ${t.badge}">${t.label}</span>
+            <div class="preview-overlay"><span>Preview</span></div>
+          </div>
+          <div class="resource-body">
+            <div class="resource-folder">${r.folder}</div>
+            <h3>${r.title}</h3>
+            <p>${r.description}</p>
+          </div>
+          <div class="resource-footer">
+            <button class="download-btn" onclick="openEmailModal(${r.id})">
+              ↓ &nbsp;Free Download
+            </button>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── PREVIEW MODAL ──
+  function openPreview(id) {
+    const r = resources.find(x => x.id === id);
+    if (!r) return;
+    const t = typeConfig[r.type] || { icon:'📄' };
+    document.getElementById('preview-title').textContent = r.title;
+    const content = document.getElementById('preview-content');
+    if (r.preview && (r.type === 'img' || r.preview.match(/\.(jpg|jpeg|png|gif|webp)/i))) {
+      content.innerHTML = `<img src="${r.preview}" alt="${r.title}" style="width:100%;border-radius:4px;" />`;
+    } else {
+      content.innerHTML = `
+        <div class="preview-modal-placeholder">
+          <div class="big-icon">${t.icon}</div>
+          <p>${r.title}</p>
+          <p style="font-size:0.75rem;">${r.folder} · ${(typeConfig[r.type]||{}).label||'FILE'}</p>
+        </div>`;
+    }
+    document.getElementById('preview-dl-btn').onclick = () => {
+      closePreviewModal();
+      openEmailModal(id);
+    };
+    document.getElementById('preview-modal').classList.add('open');
+  }
+
+  function closePreviewModal() {
+    document.getElementById('preview-modal').classList.remove('open');
+  }
+
+  document.getElementById('preview-close').addEventListener('click', closePreviewModal);
+  document.getElementById('preview-cancel').addEventListener('click', closePreviewModal);
+
+  // ── EMAIL MODAL ──
+  function openEmailModal(id) {
+    const r = resources.find(x => x.id === id);
+    if (!r) return;
+    pendingDownload = r;
+    document.getElementById('modal-resource-name').textContent = '📄 ' + r.title;
+    document.getElementById('form-resource-name').value = r.title;
+    document.getElementById('email-modal').classList.add('open');
+  }
+
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('email-modal').classList.remove('open');
+  });
+
+  // ── FORM SUBMIT → submit to Netlify then trigger download ──
+  document.getElementById('download-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() });
+    } catch(err) { /* still proceed to download */ }
+
+    document.getElementById('email-modal').classList.remove('open');
+    form.reset();
+
+    // Trigger download
+    if (pendingDownload && pendingDownload.file && pendingDownload.file !== '#') {
+      const a = document.createElement('a');
+      a.href = pendingDownload.file;
+      a.download = pendingDownload.title;
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } else {
+      alert('Download link coming soon! Check back shortly.');
+    }
+    pendingDownload = null;
+  });
+
+  // Close modals on overlay click
+  document.getElementById('email-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  document.getElementById('preview-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+
+  // ── INIT ──
+  renderFolderTabs();
+  renderGrid();
+</script>
+</body>
+</html>
