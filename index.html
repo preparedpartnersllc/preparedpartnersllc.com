@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
+  <title>Prepared Partners LLC | Emergency Action Plan Consulting | Nationwide</title>
+  <meta name="description" content="Prepared Partners LLC writes OSHA-compliant Emergency Action Plans for businesses, schools, and organizations nationwide. Certified Planning Section Chief with 9 years Detroit Fire Department experience. Protect your business before an emergency — or an insurance carrier — forces you to." />
+  <meta name="keywords" content="emergency action plan consultant, EAP writing service, OSHA emergency action plan, incident action plan consultant, emergency preparedness consultant, Planning Section Chief, fire emergency action plan, business emergency plan, school emergency action plan, emergency action plan training, emergency plan exercises, OSHA 29 CFR 1910.38, emergency action plan nationwide, emergency preparedness consultant Detroit, EAP consultant Michigan" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Prepared Partners LLC" />
+  <link rel="canonical" href="https://preparedpartnersllc.com/" />
+
+  <!-- ── OPEN GRAPH ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Prepared Partners LLC | Emergency Action Plan Consulting | Nationwide" />
+  <meta property="og:description" content="No Emergency Action Plan? Your insurance carrier and OSHA already know. Prepared Partners LLC writes, trains, and supports compliant EAPs for businesses and schools nationwide." />
+  <meta property="og:url" content="https://preparedpartnersllc.com/" />
+
+  <!-- ── SCHEMA ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Prepared Partners LLC",
+    "description": "Certified emergency action plan consulting firm. We write OSHA-compliant Emergency Action Plans and Incident Action Plans, deliver training and exercises, and provide ongoing support for businesses, schools, and organizations nationwide.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Southfield",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed": "US",
+    "hasCredential": ["CFI-I","CFI-II","Plans Examiner I","Planning Section Chief","Detroit Fire Department Inspector"],
+    "serviceType": ["Emergency Action Plan Writing","Incident Action Plan Writing","Emergency Preparedness Training","Tabletop Exercises","Full-Scale Emergency Drills","OSHA Compliance Consulting","Ongoing Emergency Plan Support"]
+  }
+  </script>
+
+  <!-- ── FONTS ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:     #1A3328;
+      --navy-2:   #244D3A;
+      --orange:   #B8962E;
+      --orange-2: #D4AF4A;
+      --cream:    #FAF8F3;
+      --warm:     #F2EFE8;
+      --border:   #E2DDD4;
+      --gray:     #666660;
+      --dark:     #1E1E1A;
+      --white:    #FFFFFF;
+      --max:      1060px;
+      --pad:      clamp(20px, 5vw, 60px);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; color: var(--white); font-family: 'Playfair Display', Georgia, serif; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.2; color: var(--navy); font-family: 'Playfair Display', Georgia, serif; }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    @media (max-width: 760px) { .nav-links a:not(.nav-btn) { display: none; } }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      border-bottom: 3px solid var(--orange);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.18s;
+    }
+    .nav-btn:hover { background: var(--orange-2); }
+
+    /* HERO */
+    #hero { background: var(--navy); padding: clamp(56px, 9vw, 110px) var(--pad); }
+    .hero-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-tag {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-tag::before { content: ''; width: 22px; height: 2px; background: var(--orange); display: block; }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65);
+      font-weight: 300; margin: 20px 0 36px; max-width: 500px; line-height: 1.8;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-fill {
+      font-size: 0.875rem; font-weight: 600; background: var(--orange);
+      color: var(--white); padding: 13px 26px; border-radius: 4px;
+      text-decoration: none; transition: background 0.18s;
+    }
+    .btn-fill:hover { background: var(--orange-2); }
+    .btn-ghost {
+      font-size: 0.875rem; font-weight: 500;
+      border: 1.5px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8);
+      padding: 13px 26px; border-radius: 4px; text-decoration: none;
+      transition: border-color 0.18s, color 0.18s;
+    }
+    .btn-ghost:hover { border-color: var(--white); color: var(--white); }
+
+    .hero-card {
+      background: var(--navy-2); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 32px 28px;
+    }
+    .hero-card-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 20px;
+    }
+    .cred-items { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+    .cred-items li {
+      font-size: 0.875rem; color: rgba(255,255,255,0.8);
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.45;
+    }
+    .cred-items li::before { content: '✓'; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+    .card-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 20px 0; }
+    .card-area { font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.6; }
+
+    /* PROBLEMS */
+    #problems { background: var(--orange); padding: clamp(48px,7vw,80px) var(--pad); }
+    .prob-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 28px;
+    }
+    .prob-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .prob-item { background: rgba(0,0,0,0.14); padding: 28px 26px; }
+    .prob-q { font-size: 0.975rem; font-weight: 600; color: var(--white); margin-bottom: 9px; line-height: 1.35; }
+    .prob-a { font-size: 0.82rem; color: rgba(255,255,255,0.72); line-height: 1.7; font-weight: 300; }
+
+    /* SERVICES */
+    #services { padding: clamp(56px,8vw,96px) var(--pad); background: var(--cream); }
+    .section-head { margin-bottom: 40px; }
+    .section-head p { font-size: 0.95rem; color: var(--gray); margin-top: 12px; max-width: 520px; line-height: 1.75; }
+    .svc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .svc-row {
+      background: var(--white); border: 1px solid var(--border);
+      display: grid; grid-template-columns: 52px 1fr 160px; transition: box-shadow 0.2s;
+    }
+    .svc-row:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); position: relative; z-index: 1; }
+    .svc-num {
+      background: var(--navy); display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 700; color: var(--orange); letter-spacing: 0.05em;
+    }
+    .svc-body { padding: 24px 28px; }
+    .svc-body h3 { margin-bottom: 7px; }
+    .svc-body p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    .svc-badge-col { padding: 24px 20px; display: flex; align-items: flex-start; justify-content: flex-end; }
+    .badge {
+      font-size: 0.63rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--warm); color: var(--navy); padding: 5px 11px; border-radius: 2px; white-space: nowrap;
+    }
+
+    /* WHO */
+    #who { background: var(--navy); padding: clamp(56px,8vw,96px) var(--pad); }
+    .who-grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    #who .eyebrow { color: var(--orange); }
+    #who h2 { color: var(--white); }
+    .who-desc { font-size: 0.92rem; color: rgba(255,255,255,0.55); margin-top: 14px; line-height: 1.8; font-weight: 300; }
+    .client-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 28px; }
+    .client-item {
+      background: var(--navy-2); padding: 14px 16px;
+      font-size: 0.83rem; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; gap: 9px;
+      transition: background 0.18s, color 0.18s; cursor: default;
+    }
+    .client-item:hover { background: rgba(184,150,46,0.18); color: var(--white); }
+    .client-item::before { content: '→'; color: var(--orange); font-size: 0.72rem; flex-shrink: 0; }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 22px; margin-top: 28px; }
+    .why-item { border-left: 3px solid var(--orange); padding-left: 18px; }
+    .why-item strong { display: block; font-size: 0.93rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .why-item p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; font-weight: 300; }
+
+    /* PROCESS */
+    #process { padding: clamp(56px,8vw,96px) var(--pad); background: var(--warm); }
+    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 40px; }
+    .step {
+      background: var(--white); border: 1px solid var(--border);
+      border-top: 3px solid var(--orange); padding: 28px 22px;
+    }
+    .step-n { font-size: 2rem; font-weight: 700; color: var(--orange); opacity: 0.25; line-height: 1; margin-bottom: 14px; }
+    .step-t { font-size: 0.93rem; font-weight: 600; color: var(--navy); margin-bottom: 9px; }
+    .step-b { font-size: 0.82rem; color: var(--gray); line-height: 1.7; }
+
+    /* AREAS */
+    #areas {
+      background: var(--cream);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 36px var(--pad);
+    }
+    .areas-row { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .areas-lbl { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); flex-shrink: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .area-tag {
+      font-size: 0.8rem; font-weight: 500; color: var(--navy);
+      background: var(--white); border: 1px solid var(--border);
+      padding: 7px 15px; border-radius: 100px;
+    }
+
+    /* CONTACT */
+    #contact { padding: clamp(56px,8vw,96px) var(--pad); background: var(--cream); }
+    .contact-grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .contact-facts { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+    .cfact { display: flex; gap: 14px; align-items: flex-start; }
+    .cfact-icon {
+      width: 34px; height: 34px; background: var(--orange); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; flex-shrink: 0;
+    }
+    .cfact strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .cfact span { font-size: 0.8rem; color: var(--gray); }
+    .contact-form {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .form-head { margin-bottom: 4px; }
+    .form-head h3 { font-size: 1.05rem; }
+    .form-head p { font-size: 0.8rem; color: var(--gray); margin-top: 4px; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .fg { display: flex; flex-direction: column; gap: 5px; }
+    .fg label { font-size: 0.72rem; font-weight: 600; color: var(--navy); letter-spacing: 0.03em; }
+    .fg input, .fg select, .fg textarea {
+      font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 400;
+      color: var(--dark); background: var(--cream);
+      border: 1.5px solid var(--border); border-radius: 4px;
+      padding: 11px 13px; outline: none; transition: border-color 0.18s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--navy); }
+    .fg input::placeholder, .fg textarea::placeholder { color: #C0C0C0; }
+    .fg textarea { resize: vertical; min-height: 108px; }
+    .fg select option { background: var(--white); }
+    .form-btn {
+      font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
+      background: var(--navy); color: var(--white);
+      border: none; border-radius: 4px; padding: 14px;
+      cursor: pointer; transition: background 0.18s;
+    }
+    .form-btn:hover { background: var(--navy-2); }
+    .form-note { font-size: 0.73rem; color: #AAAAAA; text-align: center; font-style: italic; }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: clamp(32px,5vw,56px) var(--pad); }
+    .foot-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
+    }
+    .foot-brand { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .foot-brand em { color: var(--orange); font-style: normal; }
+    .foot-desc { font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.65; }
+    .foot-col-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .foot-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.18s; }
+    .foot-links a:hover { color: var(--white); }
+    .foot-bottom {
+      max-width: var(--max); margin: 28px auto 0;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .foot-copy, .foot-creds { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* HERO ANIM */
+    @keyframes up { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .hero-tag { animation: up 0.5s ease both 0.1s; }
+    #hero h1   { animation: up 0.55s ease both 0.2s; }
+    .hero-sub  { animation: up 0.55s ease both 0.3s; }
+    .hero-btns { animation: up 0.55s ease both 0.4s; }
+    .hero-card { animation: up 0.6s ease both 0.35s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .prob-grid { grid-template-columns: 1fr 1fr; }
+      .who-grid  { grid-template-columns: 1fr; gap: 48px; }
+      .steps     { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .foot-inner { grid-template-columns: 1fr 1fr; }
+      .svc-row { grid-template-columns: 52px 1fr; }
+      .svc-badge-col { display: none; }
+    }
+    @media (max-width: 600px) {
+      .prob-grid   { grid-template-columns: 1fr; }
+      .client-list { grid-template-columns: 1fr; }
+      .steps       { grid-template-columns: 1fr; }
+      .frow        { grid-template-columns: 1fr; }
+      .foot-inner  { grid-template-columns: 1fr; }
+      .foot-bottom { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="height:52px;width:52px;flex-shrink:0;">
+        <rect x="0" y="0" width="60" height="60" fill="#B8962E"/>
+        <text x="30" y="47" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#1A3328" text-anchor="middle" dominant-baseline="auto">P</text>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#F5F0E8;letter-spacing:0.05em;">PREPARED</span>
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#B8962E;letter-spacing:0.05em;">PARTNERS</span>
+        <span style="font-family:'Inter',sans-serif;font-size:0.5rem;color:#B8962E;letter-spacing:0.2em;opacity:0.8;margin-top:2px;">LLC</span>
+      </span>
+    </a>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <a href="/" style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='#B8962E'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Home</a>
+      <a href="#services" style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='#B8962E'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Services</a>
+      <a href="blog.html" style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='#B8962E'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Blog</a>
+      <a href="#contact" style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.18s;" onmouseover="this.style.color='#B8962E'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Contact</a>
+      <a class="nav-btn" href="#contact">Get Your EAP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-tag">Emergency Action Plan Consulting · Nationwide</p>
+      <h1>Your Business Needs a Plan. Not a Violation.</h1>
+      <p class="hero-sub">Prepared Partners LLC writes OSHA-compliant Emergency Action Plans for businesses and schools across the country — then trains your team, runs your exercises, and supports your plan for the long haul.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-fill">Get Your EAP Written</a>
+        <a href="#services" class="btn-ghost">See What We Do</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Credentials">
+      <p class="hero-card-label">Credentials &amp; Experience</p>
+      <ul class="cred-items">
+        <li>Certified Fire Inspector I &amp; II (CFI-I, CFI-II)</li>
+        <li>Plans Examiner I</li>
+        <li>Planning Section Chief — ICS Certified</li>
+        <li>9 Years · Detroit Fire Department</li>
+        <li>EAPs Written for Every Industry</li>
+      </ul>
+      <div class="card-divider"></div>
+      <p class="card-area">Serving businesses, schools, and organizations nationwide. Based in Southfield, Michigan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="wrap">
+    <p class="prob-label">Why Organizations Call Us</p>
+    <div class="prob-grid">
+      <div class="prob-item">
+        <p class="prob-q">Your insurance carrier is requiring one.</p>
+        <p class="prob-a">Carriers are adding Emergency Action Plan requirements to commercial policies. No plan means higher premiums, policy conditions — or denied coverage. Your wallet is already on the line.</p>
+      </div>
+      <div class="prob-item">
+        <p class="prob-q">OSHA requires it — and the fines are real.</p>
+        <p class="prob-a">OSHA 29 CFR 1910.38 requires a written EAP for most workplaces. Violations run up to $15,625 per citation — and up to $156,259 for willful non-compliance. Ignorance is not a defense.</p>
+      </div>
+      <div class="prob-item">
+        <p class="prob-q">When something happens, no plan means liability.</p>
+        <p class="prob-a">If an employee or student is injured during an emergency and you had no documented plan, no training, and no drills — your exposure in court is significant. A plan isn't just compliance. It's protection.</p>
+      </div>
+      <div class="prob-item">
+        <p class="prob-q">You have a plan but it's never been tested.</p>
+        <p class="prob-a">A plan sitting in a binder is not a plan. If your staff has never trained on it and your facility has never run a drill, you don't have an emergency plan — you have a document. We fix that.</p>
+      </div>
+      <div class="prob-item">
+        <p class="prob-q">Your school board or stakeholders are asking.</p>
+        <p class="prob-a">Schools face increasing pressure to demonstrate active emergency preparedness — especially for fire, lockdown, and severe weather events. A documented, tested EAP satisfies your board, your community, and your state.</p>
+      </div>
+      <div class="prob-item">
+        <p class="prob-q">You don't know where to start.</p>
+        <p class="prob-a">Most organizations don't have a certified emergency planner on staff. That's exactly what we are. We handle everything — the writing, the training, the exercises, and the updates — so you don't have to figure it out alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>End-to-End Emergency Preparedness</h2>
+      <p>We don't just hand you a document. We build your plan, train your people, test your readiness, and stay with you — so when something happens, you're actually prepared.</p>
+    </div>
+    <ul class="svc-list">
+      <li class="svc-row reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <h3>Emergency Action Plan (EAP) Writing</h3>
+          <p>A fully customized, OSHA-compliant Emergency Action Plan written specifically for your facility, your occupancy type, and your team. Covers fire, medical emergencies, severe weather, hazardous materials, active threats, and more. Flat-fee pricing. Delivered ready to implement.</p>
+        </div>
+        <div class="svc-badge-col"><span class="badge">Core Service</span></div>
+      </li>
+      <li class="svc-row reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <h3>Incident Action Plan (IAP) Development</h3>
+          <p>For organizations managing complex or multi-agency emergency responses, we develop Incident Action Plans aligned with NIMS and ICS standards. Ideal for municipalities, utilities, healthcare facilities, and large commercial operations requiring coordinated response protocols.</p>
+        </div>
+        <div class="svc-badge-col"><span class="badge">Specialized</span></div>
+      </li>
+      <li class="svc-row reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <h3>Emergency Preparedness Training</h3>
+          <p>Your plan is only as good as the people executing it. We deliver hands-on training sessions for your staff — covering evacuation procedures, fire response, shelter-in-place protocols, and role-specific responsibilities. In person or virtual. Documented for compliance.</p>
+        </div>
+        <div class="svc-badge-col"><span class="badge">Training</span></div>
+      </li>
+      <li class="svc-row reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <h3>Exercises &amp; Drills</h3>
+          <p>From tabletop exercises to full-scale drills, we design, facilitate, and evaluate emergency exercises for your organization. After-action reports identify gaps, validate your plan, and provide documented proof of preparedness for insurers, regulators, and stakeholders.</p>
+        </div>
+        <div class="svc-badge-col"><span class="badge">Exercises</span></div>
+      </li>
+      <li class="svc-row reveal">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <h3>Ongoing Support &amp; Plan Maintenance</h3>
+          <p>Emergency plans require regular updates as your organization changes. Our retainer program keeps your EAP current — annual reviews, updated training, new-hire orientation support, and priority response when your plan needs to be activated or revised.</p>
+        </div>
+        <div class="svc-badge-col"><span class="badge">Retainer</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="who-grid">
+    <div class="reveal">
+      <span class="eyebrow">Who We Serve</span>
+      <h2>Any Organization That Needs to Be Ready</h2>
+      <p class="who-desc">We've worked with every type of occupancy through the Detroit Fire Department. That experience means we understand the specific hazards, compliance requirements, and emergency scenarios that apply to your industry — not generic templates.</p>
+      <ul class="client-list">
+        <li class="client-item">Restaurants &amp; Food Service</li>
+        <li class="client-item">K–12 Schools</li>
+        <li class="client-item">Warehouses &amp; Distribution</li>
+        <li class="client-item">Manufacturers &amp; Auto Suppliers</li>
+        <li class="client-item">Healthcare Offices &amp; Clinics</li>
+        <li class="client-item">Retail &amp; Strip Mall Tenants</li>
+        <li class="client-item">Houses of Worship</li>
+        <li class="client-item">Property Management Companies</li>
+        <li class="client-item">Municipalities &amp; Utilities</li>
+        <li class="client-item">General Contractors</li>
+        <li class="client-item">Auto Repair &amp; Body Shops</li>
+        <li class="client-item">Any Business with Employees</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Why Prepared Partners</span>
+      <h2>This Is All We Do — And We Do It Right</h2>
+      <ul class="why-list">
+        <li class="why-item">
+          <strong>Certified Planning Section Chief</strong>
+          <p>Writing emergency plans isn't just a service we offer — it's a credential we hold. As a certified Planning Section Chief under the Incident Command System, we bring professional-grade emergency planning expertise to every engagement.</p>
+        </li>
+        <li class="why-item">
+          <strong>Real-World Fire &amp; Emergency Experience</strong>
+          <p>Nine years as a Detroit Fire Department inspector and plans examiner means we've seen what goes wrong when organizations aren't prepared. That field experience shapes every plan we write.</p>
+        </li>
+        <li class="why-item">
+          <strong>We Work Nationwide</strong>
+          <p>Your location doesn't limit your access to qualified emergency planning expertise. We write EAPs for organizations across the country — remotely or on-site, depending on your needs.</p>
+        </li>
+        <li class="why-item">
+          <strong>Flat Fees. No Surprises.</strong>
+          <p>We quote your project upfront with a flat fee. No hourly billing, no scope creep charges. You know exactly what you're paying before we start.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>Your EAP in Four Steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">01</div>
+        <p class="step-t">Discovery Call</p>
+        <p class="step-b">We learn about your organization — your facility, your occupancy type, your team size, and your current level of preparedness. No charge, no obligation. Just a focused conversation so we can scope your plan accurately.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">02</div>
+        <p class="step-t">Flat-Fee Proposal</p>
+        <p class="step-b">We send you a clear, itemized proposal covering exactly what your EAP will include, what training looks like, and what ongoing support options are available. You decide what fits your needs and budget.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">03</div>
+        <p class="step-t">Plan Written &amp; Delivered</p>
+        <p class="step-b">We write your fully customized, OSHA-compliant Emergency Action Plan. You review it, we refine it together, and you receive a final document ready for implementation — formatted professionally and built to last.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">04</div>
+        <p class="step-t">Train, Drill, Maintain</p>
+        <p class="step-b">A plan without training is just paper. We deliver staff training, facilitate your exercises, and offer retainer support to keep your plan current as your organization grows and changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section id="areas">
+  <div class="areas-row">
+    <p class="areas-lbl">We Serve</p>
+    <div class="tags">
+      <span class="area-tag">Nationwide</span>
+      <span class="area-tag">Remote EAP Writing</span>
+      <span class="area-tag">On-Site Available</span>
+      <span class="area-tag">Metro Detroit</span>
+      <span class="area-tag">Michigan</span>
+      <span class="area-tag">All 50 States</span>
+      <span class="area-tag">All Occupancy Types</span>
+      <span class="area-tag">Schools</span>
+      <span class="area-tag">Commercial</span>
+      <span class="area-tag">Industrial</span>
+      <span class="area-tag">Healthcare</span>
+      <span class="area-tag">Municipal</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get Started</span>
+      <h2>Let's Build Your Emergency Action Plan.</h2>
+      <p style="margin-top:14px;">Tell us about your organization and where you stand. We'll schedule a free discovery call, scope your EAP, and send you a flat-fee proposal — no obligation, no pressure.</p>
+      <div class="contact-facts">
+        <div class="cfact">
+          <div class="cfact-icon">⚡</div>
+          <div>
+            <strong>Response within 24 hours</strong>
+            <span>On all inquiries, every day of the week</span>
+          </div>
+        </div>
+        <div class="cfact">
+          <div class="cfact-icon">📋</div>
+          <div>
+            <strong>Insurance deadline or OSHA citation?</strong>
+            <span>Note it in the form — we prioritize urgent situations immediately</span>
+          </div>
+        </div>
+        <div class="cfact">
+          <div class="cfact-icon">🌎</div>
+          <div>
+            <strong>Available Nationwide</strong>
+            <span>Remote EAP writing available for any organization in the country</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" name="contact" method="POST" action="/thank-you" netlify netlify-honeypot="bot-field" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="form-head">
+          <h3>Request Your Free Discovery Call</h3>
+          <p>We'll reach out within 24 hours to schedule a conversation.</p>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required />
+          </div>
+          <div class="fg">
+            <label for="biz">Organization Name *</label>
+            <input type="text" id="biz" name="business" placeholder="Business, school, or org" required />
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fg">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(313) 000-0000" />
+          </div>
+          <div class="fg">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@yourorganization.com" required />
+          </div>
+        </div>
+        <div class="fg">
+          <label for="sit">What Brings You Here?</label>
+          <select id="sit" name="situation">
+            <option value="" disabled selected>Select the closest match</option>
+            <option value="insurance">Insurance carrier is requiring an EAP</option>
+            <option value="osha">OSHA citation or compliance requirement</option>
+            <option value="no-plan">We don't have an EAP at all</option>
+            <option value="outdated">Our EAP is outdated and needs a rewrite</option>
+            <option value="training">We have a plan but need training and drills</option>
+            <option value="school">School emergency preparedness</option>
+            <option value="iap">Need an Incident Action Plan (IAP)</option>
+            <option value="retainer">Interested in ongoing support</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="msg">Tell Us More</label>
+          <textarea id="msg" name="message" placeholder="Type of organization, location, number of employees, any deadlines or specific concerns..."></textarea>
+        </div>
+        <button type="submit" class="form-btn">Request Discovery Call →</button>
+        <p class="form-note">We respond within 24 hours. Your information is never shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Prepared <em>Partners</em> LLC</p>
+      <p class="foot-desc">Emergency Action Plan Consulting<br>Nationwide · Based in Southfield, Michigan</p>
+    </div>
+    <div>
+      <p class="foot-col-title">Services</p>
+      <ul class="foot-links">
+        <li><a href="#services">Emergency Action Plan Writing</a></li>
+        <li><a href="#services">Incident Action Plan Development</a></li>
+        <li><a href="#services">Emergency Preparedness Training</a></li>
+        <li><a href="#services">Exercises &amp; Drills</a></li>
+        <li><a href="#services">Ongoing Plan Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-col-title">Navigate</p>
+      <ul class="foot-links">
+        <li><a href="#problems">Why Organizations Call Us</a></li>
+        <li><a href="#who">Who We Serve</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#areas">Service Area</a></li>
+        <li><a href="#contact">Get Your EAP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-copy">© 2025 Prepared Partners LLC · All rights reserved · Southfield, Michigan</p>
+    <p class="foot-creds">CFI-I · CFI-II · Plans Examiner I · Planning Section Chief · 9 Years Detroit Fire Department</p>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 65);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
+  els.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Blog | Fire Prevention & Emergency Management Insights | Prepared Partners LLC</title>
+  <meta name="description" content="Expert articles on OSHA compliance, emergency action plans, fire prevention, and emergency management — written by a certified Planning Section Chief with 9 years Detroit Fire Department experience." />
+  <meta name="keywords" content="emergency action plan blog, fire prevention articles, OSHA compliance tips, emergency management blog, EAP consulting blog, fire safety articles, emergency preparedness tips" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Anthony Watts, Prepared Partners LLC" />
+  <link rel="canonical" href="https://preparedpartnersllc.com/blog.html" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog | Fire Prevention & Emergency Management | Prepared Partners LLC" />
+  <meta property="og:description" content="Expert articles on emergency action plans, fire prevention, OSHA compliance, and emergency management from a certified fire inspector." />
+  <meta property="og:url" content="https://preparedpartnersllc.com/blog.html" />
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --navy:     #1A3328;
+      --navy-2:   #244D3A;
+      --orange:   #B8962E;
+      --orange-2: #D4AF4A;
+      --cream:    #FAF8F3;
+      --warm:     #F2EFE8;
+      --border:   #E2DDD4;
+      --gray:     #666660;
+      --dark:     #1E1E1A;
+      --white:    #FFFFFF;
+      --max:      1060px;
+      --pad:      clamp(20px, 5vw, 60px);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      border-bottom: 3px solid var(--orange);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 0.82rem; font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none; transition: color 0.18s;
+    }
+    .nav-link:hover { color: var(--orange); }
+    .nav-link.active { color: var(--orange); }
+    .nav-btn {
+      font-size: 0.82rem; font-weight: 600;
+      background: var(--orange); color: var(--white);
+      padding: 10px 22px; border-radius: 4px;
+      text-decoration: none; transition: background 0.18s;
+    }
+    .nav-btn:hover { background: var(--orange-2); }
+    @media (max-width: 760px) { .nav-link { display: none; } }
+
+    /* HERO */
+    .blog-hero {
+      background: var(--navy);
+      padding: clamp(40px, 7vw, 80px) var(--pad);
+    }
+    .blog-hero-inner { max-width: var(--max); margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--orange); display: block; margin-bottom: 12px;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.2; margin-bottom: 14px;
+    }
+    .blog-hero p {
+      font-size: 1rem; color: rgba(255,255,255,0.6);
+      font-weight: 300; max-width: 560px; line-height: 1.8;
+    }
+
+    /* FILTERS + SEARCH */
+    .blog-controls {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 67px; z-index: 98;
+    }
+    .blog-controls-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 12px var(--pad);
+      display: flex; align-items: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .filter-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); flex-shrink: 0; }
+    .filter-btn {
+      font-size: 0.78rem; font-weight: 500;
+      padding: 5px 14px; border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--cream); color: var(--gray);
+      cursor: pointer; transition: all 0.18s;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .filter-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .search-wrap { margin-left: auto; }
+    .search-input {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem; padding: 7px 14px;
+      border: 1px solid var(--border); border-radius: 4px;
+      background: var(--cream); color: var(--dark);
+      width: 220px; outline: none; transition: border-color 0.18s;
+    }
+    .search-input:focus { border-color: var(--navy); }
+    .search-input::placeholder { color: #C0C0C0; }
+
+    /* BLOG GRID */
+    .blog-main { max-width: var(--max); margin: 0 auto; padding: clamp(32px, 5vw, 56px) var(--pad); }
+
+    /* FEATURED */
+    .featured-wrap { margin-bottom: 40px; }
+    .featured-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; display: block; }
+    .featured-card {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; background: var(--white);
+      transition: box-shadow 0.2s; cursor: pointer;
+      text-decoration: none;
+    }
+    .featured-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); }
+    .featured-left {
+      background: var(--navy); padding: 36px 32px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .featured-cat {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--orange);
+      margin-bottom: 14px; display: block;
+    }
+    .featured-left h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 700; color: var(--white);
+      line-height: 1.25; margin-bottom: 14px;
+    }
+    .featured-left p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300; }
+    .featured-meta { margin-top: 24px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    .featured-right { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-right .cat-badge { margin-bottom: 14px; }
+    .featured-right h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--dark); line-height: 1.3; margin-bottom: 10px;
+    }
+    .featured-right p { font-size: 0.875rem; color: var(--gray); line-height: 1.7; }
+    .featured-right-meta { margin-top: 16px; font-size: 0.75rem; color: #AAAAAA; }
+
+    /* POST GRID */
+    .posts-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; display: block; }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .post-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+      transition: box-shadow 0.2s; cursor: pointer;
+      text-decoration: none; display: flex; flex-direction: column;
+    }
+    .post-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.08); }
+    .post-thumb {
+      width: 100%; height: 150px;
+      object-fit: cover; display: block;
+    }
+    .post-thumb-placeholder {
+      width: 100%; height: 150px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .thumb-fire { background: #FAECE7; }
+    .thumb-em   { background: #E1F5EE; }
+    .thumb-osha { background: #E6F1FB; }
+    .thumb-ins  { background: #FAEEDA; }
+    .post-card-top { padding: 14px 16px 0; }
+    .cat-badge {
+      font-size: 0.63rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px; display: inline-block;
+    }
+    .cat-fire { background: #FAECE7; color: #993C1D; }
+    .cat-em   { background: #E1F5EE; color: #0F6E56; }
+    .cat-osha { background: #E6F1FB; color: #185FA5; }
+    .cat-ins  { background: #FAEEDA; color: #854F0B; }
+    .post-card-body { padding: 10px 16px 14px; flex: 1; }
+    .post-card-body h3 {
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--dark); line-height: 1.35; margin-bottom: 7px;
+    }
+    .post-card-body p { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+    .post-card-footer {
+      padding: 10px 16px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .post-date { font-size: 0.72rem; color: #AAAAAA; }
+    .post-read { font-size: 0.72rem; color: #AAAAAA; }
+    .post-accent { height: 3px; background: var(--orange); }
+
+    /* EMPTY STATE */
+    .no-results {
+      text-align: center; padding: 56px 20px;
+      color: var(--gray); font-size: 0.95rem;
+      display: none;
+    }
+
+    /* CTA */
+    .blog-cta {
+      background: var(--navy); margin-top: 56px;
+      border-radius: 8px; padding: 40px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .blog-cta h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--white); margin-bottom: 6px;
+    }
+    .blog-cta p { font-size: 0.875rem; color: rgba(255,255,255,0.55); max-width: 460px; line-height: 1.7; }
+    .blog-cta a {
+      font-size: 0.875rem; font-weight: 600;
+      background: var(--orange); color: var(--white);
+      padding: 13px 26px; border-radius: 4px;
+      text-decoration: none; white-space: nowrap;
+      transition: background 0.18s;
+    }
+    .blog-cta a:hover { background: var(--orange-2); }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: clamp(32px,5vw,56px) var(--pad); margin-top: 0; }
+    .foot-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
+    }
+    .foot-brand { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .foot-brand em { color: var(--orange); font-style: normal; }
+    .foot-desc { font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.65; }
+    .foot-col-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 14px; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .foot-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.18s; }
+    .foot-links a:hover { color: var(--white); }
+    .foot-bottom {
+      max-width: var(--max); margin: 28px auto 0;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .foot-copy, .foot-creds { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .posts-grid { grid-template-columns: 1fr 1fr; }
+      .foot-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .blog-controls-inner { flex-direction: column; align-items: flex-start; }
+      .search-wrap { margin-left: 0; width: 100%; }
+      .search-input { width: 100%; }
+      .foot-inner { grid-template-columns: 1fr; }
+      .foot-bottom { flex-direction: column; }
+      .blog-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" style="display:flex;align-items:center;gap:14px;text-decoration:none;">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="height:52px;width:52px;flex-shrink:0;">
+        <rect x="0" y="0" width="60" height="60" fill="#B8962E"/>
+        <text x="30" y="47" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#1A3328" text-anchor="middle" dominant-baseline="auto">P</text>
+      </svg>
+      <span style="display:flex;flex-direction:column;line-height:1.1;">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#F5F0E8;letter-spacing:0.05em;">PREPARED</span>
+        <span style="font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:#B8962E;letter-spacing:0.05em;">PARTNERS</span>
+        <span style="font-family:'Inter',sans-serif;font-size:0.5rem;color:#B8962E;letter-spacing:0.2em;opacity:0.8;margin-top:2px;">LLC</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+      <a class="nav-btn" href="/#contact">Get Your EAP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <span class="eyebrow">Knowledge Base</span>
+    <h1>Fire Prevention &amp; Emergency Management Insights</h1>
+    <p>Expert articles on OSHA compliance, emergency action plans, fire prevention, and protecting your organization — written by a certified Planning Section Chief with 9 years of Detroit Fire Department experience.</p>
+  </div>
+</div>
+
+<!-- FILTERS + SEARCH -->
+<div class="blog-controls">
+  <div class="blog-controls-inner">
+    <div class="filter-group">
+      <span class="filter-label">Filter</span>
+      <button class="filter-btn active" data-cat="all">All Posts</button>
+      <button class="filter-btn" data-cat="fire">Fire Prevention</button>
+      <button class="filter-btn" data-cat="em">Emergency Management</button>
+      <button class="filter-btn" data-cat="osha">OSHA Compliance</button>
+      <button class="filter-btn" data-cat="ins">Insurance</button>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" id="search" placeholder="Search articles..." />
+    </div>
+  </div>
+</div>
+
+<!-- MAIN BLOG CONTENT -->
+<div class="blog-main">
+
+  <!-- FEATURED -->
+  <div class="featured-wrap" id="featured-wrap">
+    <span class="featured-label">Featured</span>
+    <a class="featured-card" href="blog-post.html">
+      <div class="featured-left">
+        <div>
+          <span class="featured-cat">Emergency Management</span>
+          <h2>Does Your Business Actually Have an Emergency Action Plan — Or Just a Document?</h2>
+          <p>Most businesses that get cited by OSHA already had something on paper. The problem wasn't the plan — it was that nobody was trained on it and it had never been tested. Here's the difference between a real EAP and a compliance decoration.</p>
+        </div>
+        <div class="featured-meta">Anthony Watts · Prepared Partners LLC · 6 min read</div>
+      </div>
+      <div class="featured-right">
+        <span class="cat-badge cat-fire">Fire Prevention</span>
+        <h3>What OSHA 29 CFR 1910.38 Actually Requires — And What It Costs to Ignore It</h3>
+        <p>OSHA's emergency action plan standard applies to most workplaces in America. Violations start at $15,625 per citation. Here's exactly what the standard requires in plain language — and how to make sure you're covered.</p>
+        <div class="featured-right-meta">Anthony Watts · 4 min read</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- POST GRID -->
+  <span class="posts-label" id="posts-label">Latest Articles</span>
+  <div class="posts-grid" id="posts-grid">
+
+    <a class="post-card" href="blog-post.html" data-cat="em" data-title="5 things most emergency action plans get wrong">
+      <div class="post-thumb-placeholder thumb-em">🗂</div>
+      <div class="post-card-top"><span class="cat-badge cat-em">Emergency Management</span></div>
+      <div class="post-card-body">
+        <h3>5 Things Most Emergency Action Plans Get Wrong</h3>
+        <p>After 9 years inspecting commercial properties in Detroit, these are the most common mistakes I see in EAPs that look complete on paper but fail when tested.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">March 15, 2026</span>
+        <span class="post-read">5 min read</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="blog-post.html" data-cat="ins" data-title="why your insurance carrier is now asking for your emergency action plan">
+      <div class="post-thumb-placeholder thumb-ins">🛡</div>
+      <div class="post-card-top"><span class="cat-badge cat-ins">Insurance</span></div>
+      <div class="post-card-body">
+        <h3>Why Your Insurance Carrier Is Now Asking for Your Emergency Action Plan</h3>
+        <p>Carriers are adding EAP requirements to commercial policies. No plan means higher premiums or denied coverage. Here's what's driving the trend and what to do about it.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">March 10, 2026</span>
+        <span class="post-read">4 min read</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="blog-post.html" data-cat="em" data-title="tabletop exercises vs full-scale drills which does your organization need">
+      <div class="post-thumb-placeholder thumb-em">📋</div>
+      <div class="post-card-top"><span class="cat-badge cat-em">Emergency Management</span></div>
+      <div class="post-card-body">
+        <h3>Tabletop Exercises vs Full-Scale Drills: Which Does Your Organization Need?</h3>
+        <p>Not every organization needs the same type of emergency exercise. How to choose the right format based on your size, budget, and current preparedness level.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">March 5, 2026</span>
+        <span class="post-read">5 min read</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="blog-post.html" data-cat="fire" data-title="the hidden cost of not having a fire evacuation plan at your restaurant">
+      <div class="post-thumb-placeholder thumb-fire">🔥</div>
+      <div class="post-card-top"><span class="cat-badge cat-fire">Fire Prevention</span></div>
+      <div class="post-card-body">
+        <h3>The Hidden Cost of Not Having a Fire Evacuation Plan at Your Restaurant</h3>
+        <p>Restaurants are one of the highest-risk occupancies for fire. Most don't have a documented evacuation plan — and most don't find out until it's too late.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Feb 28, 2026</span>
+        <span class="post-read">3 min read</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="blog-post.html" data-cat="osha" data-title="osha emergency action plan requirements for schools">
+      <div class="post-thumb-placeholder thumb-osha">🏫</div>
+      <div class="post-card-top"><span class="cat-badge cat-osha">OSHA Compliance</span></div>
+      <div class="post-card-body">
+        <h3>OSHA Emergency Action Plan Requirements for Schools: What Administrators Need to Know</h3>
+        <p>Schools have specific obligations under OSHA's EAP standard — and many are not in compliance. Here's what every administrator should have documented.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Feb 20, 2026</span>
+        <span class="post-read">6 min read</span>
+      </div>
+    </a>
+
+    <a class="post-card" href="blog-post.html" data-cat="em" data-title="what is an incident action plan and when does your organization need one">
+      <div class="post-thumb-placeholder thumb-em">🚨</div>
+      <div class="post-card-top"><span class="cat-badge cat-em">Emergency Management</span></div>
+      <div class="post-card-body">
+        <h3>What Is an Incident Action Plan — and When Does Your Organization Need One?</h3>
+        <p>An IAP is not the same as an EAP. Understanding the difference could determine how effectively your organization responds when a real emergency unfolds.</p>
+      </div>
+      <div class="post-card-footer">
+        <span class="post-date">Feb 14, 2026</span>
+        <span class="post-read">5 min read</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="no-results" id="no-results">
+    No articles found. Try a different search or category.
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <div>
+      <h3>Ready to Get Your Emergency Action Plan Written?</h3>
+      <p>We write fully customized, OSHA-compliant EAPs for businesses and schools nationwide. Flat-fee pricing. No obligation discovery call to get started.</p>
+    </div>
+    <a href="/#contact">Request Your Free Discovery Call →</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-brand">Prepared <em>Partners</em> LLC</p>
+      <p class="foot-desc">Emergency Action Plan Consulting<br>Nationwide · Based in Southfield, Michigan</p>
+    </div>
+    <div>
+      <p class="foot-col-title">Services</p>
+      <ul class="foot-links">
+        <li><a href="/#services">Emergency Action Plan Writing</a></li>
+        <li><a href="/#services">Incident Action Plan Development</a></li>
+        <li><a href="/#services">Emergency Preparedness Training</a></li>
+        <li><a href="/#services">Exercises &amp; Drills</a></li>
+        <li><a href="/#services">Ongoing Plan Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-col-title">Navigate</p>
+      <ul class="foot-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="/#contact">Get Your EAP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p class="foot-copy">© 2025 Prepared Partners LLC · All rights reserved · Southfield, Michigan</p>
+    <p class="foot-creds">CFI-I · CFI-II · Plans Examiner I · Planning Section Chief · 9 Years Detroit Fire Department</p>
+  </div>
+</footer>
+
+<script>
+  // FILTER
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.post-card');
+  const noResults = document.getElementById('no-results');
+  const featuredWrap = document.getElementById('featured-wrap');
+  let currentCat = 'all';
+  let currentSearch = '';
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      applyFilters();
+    });
+  });
+
+  document.getElementById('search').addEventListener('input', e => {
+    currentSearch = e.target.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const catMatch = currentCat === 'all' || card.dataset.cat === currentCat;
+      const searchMatch = !currentSearch || card.dataset.title.includes(currentSearch);
+      if (catMatch && searchMatch) {
+        card.style.display = 'flex';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    featuredWrap.style.display = currentCat === 'all' && !currentSearch ? 'block' : 'none';
+  }
+</script>
+
+</body>
+</html>
