@@ -453,24 +453,23 @@
     document.getElementById('email-modal').classList.remove('open');
   });
 
-  // ── FORM SUBMIT → submit to Netlify then trigger download ──
-  document.getElementById('download-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
+  // ── CHECK IF ALREADY SUBSCRIBED ──
+  function isSubscribed() {
+    return localStorage.getItem('pp_subscribed') === 'true';
+  }
 
-    try {
-      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() });
-    } catch(err) { /* still proceed to download */ }
+  function setSubscribed(email, name) {
+    localStorage.setItem('pp_subscribed', 'true');
+    localStorage.setItem('pp_email', email);
+    localStorage.setItem('pp_name', name);
+  }
 
-    document.getElementById('email-modal').classList.remove('open');
-    form.reset();
-
-    // Trigger download
-    if (pendingDownload && pendingDownload.file && pendingDownload.file !== '#') {
+  // ── TRIGGER DOWNLOAD ──
+  function triggerDownload(resource) {
+    if (resource && resource.file && resource.file !== '#') {
       const a = document.createElement('a');
-      a.href = pendingDownload.file;
-      a.download = pendingDownload.title;
+      a.href = resource.file;
+      a.download = resource.title;
       a.target = '_blank';
       document.body.appendChild(a);
       a.click();
@@ -478,6 +477,63 @@
     } else {
       alert('Download link coming soon! Check back shortly.');
     }
+  }
+
+  // ── OPEN EMAIL MODAL OR SKIP IF ALREADY SUBSCRIBED ──
+  function openEmailModal(id) {
+    const r = resources.find(x => x.id === id);
+    if (!r) return;
+    pendingDownload = r;
+
+    if (isSubscribed()) {
+      // Already subscribed — download immediately
+      triggerDownload(r);
+      pendingDownload = null;
+      return;
+    }
+
+    document.getElementById('modal-resource-name').textContent = '📄 ' + r.title;
+    document.getElementById('form-resource-name').value = r.title;
+    document.getElementById('email-modal').classList.add('open');
+  }
+
+  // ── FORM SUBMIT ──
+  document.getElementById('download-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const nameVal = form.querySelector('input[name="name"]').value.trim();
+    const emailVal = form.querySelector('input[name="email"]').value.trim();
+    const resourceName = form.querySelector('input[name="resource"]').value;
+    const btn = form.querySelector('.modal-submit');
+
+    btn.textContent = 'Getting your download...';
+    btn.disabled = true;
+
+    try {
+      // Add to Mailchimp via Netlify function
+      await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, name: nameVal })
+      });
+    } catch(err) { /* proceed regardless */ }
+
+    // Also submit to Netlify Forms for backup
+    try {
+      const data = new FormData(form);
+      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() });
+    } catch(err) {}
+
+    // Remember this visitor
+    setSubscribed(emailVal, nameVal);
+
+    document.getElementById('email-modal').classList.remove('open');
+    form.reset();
+    btn.textContent = 'Get Free Download →';
+    btn.disabled = false;
+
+    // Trigger download
+    triggerDownload(pendingDownload);
     pendingDownload = null;
   });
 
