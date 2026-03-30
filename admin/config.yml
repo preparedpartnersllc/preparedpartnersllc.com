@@ -5,6 +5,9 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+editor:
+  preview: false
+
 collections:
   - name: "blog"
     label: "Blog Posts"
@@ -13,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "date", format: "MMMM D, YYYY", dateFormat: "MMMM D, YYYY", timeFormat: false }
       - label: "Category"
         name: "category"
         widget: "select"
@@ -22,7 +25,7 @@ collections:
           - { label: "Emergency Management", value: "em" }
           - { label: "OSHA Compliance", value: "osha" }
           - { label: "Insurance", value: "ins" }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Summary", name: "summary", widget: "text", hint: "Short description shown on blog listing page (1-2 sentences)" }
-      - { label: "Read Time (e.g. 5 min read)", name: "readtime", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Thumbnail Image (Optional)", name: "thumbnail", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text", hint: "1-2 sentences shown on the blog listing page" }
+      - { label: "Read Time", name: "readtime", widget: "string", hint: "e.g. 4 min read", default: "5 min read" }
+      - { label: "Body", name: "body", widget: "markdown", modes: ["rich_text"] }
