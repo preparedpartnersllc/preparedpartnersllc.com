@@ -45,7 +45,7 @@ collections:
           - { label: "EAP Templates", value: "EAP Templates" }
           - { label: "Fire Prevention", value: "Fire Prevention" }
           - { label: "Training Materials", value: "Training Materials" }
-      - { label: "Description", name: "description", widget: "text", hint: "Short description shown on the resource card" }
+      - { label: "Description", name: "description", widget: "text", hint: "Short description shown on the resource row" }
       - label: "File Type"
         name: "filetype"
         widget: "select"
@@ -54,8 +54,6 @@ collections:
           - { label: "Word Document (.docx)", value: "docx" }
           - { label: "PowerPoint (.pptx)", value: "pptx" }
           - { label: "Excel (.xlsx)", value: "xlsx" }
-          - { label: "Image", value: "img" }
           - { label: "ZIP", value: "zip" }
       - { label: "File URL", name: "fileurl", widget: "string", hint: "Paste the raw GitHub URL to the file" }
-      - { label: "Preview Image (Optional)", name: "preview", widget: "image", required: false, hint: "Upload a screenshot or thumbnail of the resource" }
       - { label: "Display Order", name: "order", widget: "number", default: 1, hint: "Lower numbers appear first within a folder" }
