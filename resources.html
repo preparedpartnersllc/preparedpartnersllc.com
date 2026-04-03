@@ -20,7 +20,6 @@
     }
     body { font-family:'Inter',sans-serif; color:var(--dark); background:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
 
-    /* NAV */
     nav { background:var(--navy); border-bottom:3px solid var(--orange); position:sticky; top:0; z-index:99; }
     .nav-inner { max-width:var(--max); margin:0 auto; padding:0 var(--pad); height:64px; display:flex; align-items:center; justify-content:space-between; }
     .nav-links { display:flex; align-items:center; gap:24px; }
@@ -30,17 +29,14 @@
     .nav-btn:hover { background:var(--orange-2); }
     @media(max-width:760px){.nav-link{display:none;}}
 
-    /* HERO */
     .hero { background:var(--navy); padding:clamp(40px,7vw,80px) var(--pad); }
     .hero-inner { max-width:var(--max); margin:0 auto; }
     .eyebrow { font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); display:block; margin-bottom:12px; }
     .hero h1 { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:var(--white); line-height:1.2; margin-bottom:14px; }
     .hero p { font-size:1rem; color:rgba(255,255,255,0.6); font-weight:300; max-width:560px; line-height:1.8; }
 
-    /* MAIN */
     .main { max-width:var(--max); margin:0 auto; padding:clamp(40px,6vw,72px) var(--pad); }
 
-    /* FOLDER TABS */
     .folder-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
     .folder-tab { font-size:0.82rem; font-weight:500; padding:8px 18px; border-radius:4px; border:1px solid var(--border); background:var(--white); color:var(--gray); cursor:pointer; transition:all 0.18s; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:7px; }
     .folder-tab:hover { border-color:var(--orange); color:var(--orange); }
@@ -48,31 +44,22 @@
     .folder-tab .count { font-size:0.68rem; background:rgba(255,255,255,0.15); padding:1px 7px; border-radius:100px; }
     .folder-tab:not(.active) .count { background:var(--warm); color:var(--gray); }
 
-    /* RESOURCE GRID */
     .resource-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-
-    /* RESOURCE CARD */
     .resource-card { background:var(--white); border:1px solid var(--border); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; transition:box-shadow 0.2s; }
     .resource-card:hover { box-shadow:0 4px 18px rgba(0,0,0,0.08); }
 
-    /* PREVIEW */
     .resource-preview { width:100%; height:160px; background:var(--warm); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; cursor:pointer; }
     .resource-preview img { width:100%; height:100%; object-fit:cover; }
-    .resource-preview .preview-icon { font-size:3rem; }
-    .preview-overlay { position:absolute; inset:0; background:rgba(26,51,40,0.7); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s; }
+    .preview-icon { font-size:3rem; pointer-events:none; }
+    .preview-overlay { position:absolute; inset:0; background:rgba(26,51,40,0.75); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.2s; }
     .resource-preview:hover .preview-overlay { opacity:1; }
     .preview-overlay span { color:var(--white); font-size:0.82rem; font-weight:600; letter-spacing:0.05em; }
 
-    .file-type-badge { position:absolute; top:10px; right:10px; font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
-    .type-pdf { background:#E53935; color:var(--white); }
-    .type-ppt { background:#D84315; color:var(--white); }
-    .type-doc { background:#1565C0; color:var(--white); }
-    .type-img { background:#558B2F; color:var(--white); }
-    .type-xls { background:#2E7D32; color:var(--white); }
-    .type-zip { background:#6A1B9A; color:var(--white); }
+    .file-badge { position:absolute; top:10px; right:10px; font-size:0.6rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 8px; border-radius:2px; }
+    .type-pdf{background:#E53935;color:#fff;} .type-docx{background:#1565C0;color:#fff;} .type-pptx{background:#D84315;color:#fff;} .type-xlsx{background:#2E7D32;color:#fff;} .type-img{background:#558B2F;color:#fff;} .type-zip{background:#6A1B9A;color:#fff;}
 
     .resource-body { padding:16px; flex:1; }
-    .resource-folder { font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:6px; }
+    .resource-folder-label { font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); margin-bottom:6px; }
     .resource-body h3 { font-size:0.92rem; font-weight:600; color:var(--dark); line-height:1.35; margin-bottom:6px; }
     .resource-body p { font-size:0.8rem; color:var(--gray); line-height:1.6; }
 
@@ -80,14 +67,17 @@
     .download-btn { width:100%; font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; background:var(--navy); color:var(--white); border:none; border-radius:4px; padding:10px; cursor:pointer; transition:background 0.18s; display:flex; align-items:center; justify-content:center; gap:7px; }
     .download-btn:hover { background:var(--navy-2); }
 
-    /* MODAL OVERLAY */
+    .loading { text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
+    .empty { text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
+
+    /* MODALS */
     .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:200; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.2s; }
     .modal-overlay.open { opacity:1; pointer-events:all; }
-    .modal { background:var(--white); border-radius:8px; width:100%; max-width:480px; padding:36px 32px; position:relative; }
+
+    .modal { background:var(--white); border-radius:8px; width:100%; max-width:460px; padding:36px 32px; position:relative; }
     .modal-close { position:absolute; top:14px; right:16px; background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--gray); line-height:1; }
-    .modal-close:hover { color:var(--dark); }
     .modal h3 { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:700; color:var(--navy); margin-bottom:8px; }
-    .modal p { font-size:0.85rem; color:var(--gray); margin-bottom:20px; line-height:1.6; }
+    .modal p { font-size:0.85rem; color:var(--gray); margin-bottom:16px; line-height:1.6; }
     .modal-resource-name { font-size:0.8rem; font-weight:600; color:var(--orange); margin-bottom:20px; display:block; }
     .modal input { width:100%; font-family:'Inter',sans-serif; font-size:0.875rem; padding:11px 14px; border:1.5px solid var(--border); border-radius:4px; background:var(--cream); color:var(--dark); outline:none; margin-bottom:12px; transition:border-color 0.18s; }
     .modal input:focus { border-color:var(--navy); }
@@ -96,29 +86,21 @@
     .modal-submit:hover { background:var(--orange-2); }
     .modal-note { font-size:0.72rem; color:#AAAAAA; text-align:center; margin-top:10px; font-style:italic; }
 
-    /* PREVIEW MODAL */
-    .preview-modal { background:var(--white); border-radius:8px; width:100%; max-width:860px; max-height:90vh; overflow:auto; position:relative; }
-    .preview-modal-inner { padding:24px; }
-    .preview-modal h3 { font-size:1.1rem; font-weight:600; color:var(--navy); margin-bottom:16px; padding-right:32px; }
-    .preview-modal img { width:100%; border-radius:4px; }
-    .preview-modal-placeholder { height:300px; background:var(--warm); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
-    .preview-modal-placeholder .big-icon { font-size:4rem; }
-    .preview-modal-placeholder p { font-size:0.85rem; color:var(--gray); }
-    .preview-modal-actions { display:flex; gap:10px; margin-top:16px; }
-    .preview-dl-btn { flex:1; font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:600; background:var(--navy); color:var(--white); border:none; border-radius:4px; padding:11px; cursor:pointer; transition:background 0.18s; }
+    .preview-modal-box { background:var(--white); border-radius:8px; width:100%; max-width:880px; max-height:92vh; overflow:auto; position:relative; padding:24px; }
+    .preview-modal-box h3 { font-size:1.05rem; font-weight:600; color:var(--navy); margin-bottom:16px; padding-right:32px; }
+    .preview-modal-box iframe { width:100%; height:500px; border:none; border-radius:4px; }
+    .preview-modal-box img { width:100%; border-radius:4px; }
+    .preview-placeholder { height:300px; background:var(--warm); border-radius:4px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; }
+    .preview-placeholder .big-icon { font-size:4rem; }
+    .preview-placeholder p { font-size:0.85rem; color:var(--gray); }
+    .preview-actions { display:flex; gap:10px; margin-top:16px; }
+    .preview-dl-btn { flex:1; font-family:'Inter',sans-serif; font-size:0.875rem; font-weight:600; background:var(--navy); color:var(--white); border:none; border-radius:4px; padding:12px; cursor:pointer; transition:background 0.18s; }
     .preview-dl-btn:hover { background:var(--navy-2); }
-    .preview-cancel-btn { font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:500; background:transparent; color:var(--gray); border:1px solid var(--border); border-radius:4px; padding:11px 18px; cursor:pointer; }
+    .preview-cancel-btn { font-family:'Inter',sans-serif; font-size:0.875rem; font-weight:500; background:transparent; color:var(--gray); border:1px solid var(--border); border-radius:4px; padding:12px 18px; cursor:pointer; }
 
-    /* EMPTY */
-    .empty { text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
-
-    /* HIDDEN NETLIFY FORM */
+    /* NETLIFY HIDDEN FORM */
     .netlify-hidden { display:none; }
 
-    /* NO RESULTS */
-    .no-results { display:none; text-align:center; padding:56px 20px; color:var(--gray); font-size:0.95rem; grid-column:1/-1; }
-
-    /* FOOTER */
     footer { background:var(--navy); padding:clamp(32px,5vw,56px) var(--pad); }
     .foot-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; }
     .foot-brand { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:8px; }
@@ -137,7 +119,7 @@
 </head>
 <body>
 
-<!-- Hidden Netlify form for form detection -->
+<!-- Netlify form for detection -->
 <form name="resource-download" netlify netlify-honeypot="bot-field" class="netlify-hidden">
   <input type="hidden" name="form-name" value="resource-download" />
   <input type="text" name="bot-field" />
@@ -176,15 +158,17 @@
   <div class="hero-inner">
     <span class="eyebrow">Free Resources</span>
     <h1>Tools, Templates &amp; Checklists — No Cost</h1>
-    <p>Download free emergency preparedness and fire prevention resources built from real field experience. Enter your email and get instant access.</p>
+    <p>Download free emergency preparedness and fire prevention resources built from real field experience. Enter your email once and get instant access to everything.</p>
   </div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
-  <div class="folder-tabs" id="folder-tabs"></div>
+  <div class="folder-tabs" id="folder-tabs">
+    <button class="folder-tab active" data-folder="all">📁 All Resources</button>
+  </div>
   <div class="resource-grid" id="resource-grid">
-    <div class="empty" id="loading-msg">Loading resources...</div>
+    <div class="loading" id="loading-msg">Loading resources...</div>
   </div>
 </div>
 
@@ -193,15 +177,14 @@
   <div class="modal">
     <button class="modal-close" id="modal-close">×</button>
     <h3>Get Your Free Download</h3>
-    <p>Enter your name and email for instant access. We'll also send you occasional tips on emergency preparedness and fire safety — unsubscribe anytime.</p>
+    <p>Enter your name and email for instant access. We'll send occasional tips on emergency preparedness — unsubscribe anytime.</p>
     <span class="modal-resource-name" id="modal-resource-name"></span>
-    <form id="download-form" name="resource-download" method="POST" action="/resources.html">
+    <form id="download-form">
       <input type="hidden" name="form-name" value="resource-download" />
-      <input type="hidden" name="bot-field" />
       <input type="hidden" name="resource" id="form-resource-name" />
-      <input type="text" name="name" placeholder="Your Name *" required />
-      <input type="email" name="email" placeholder="Your Email *" required />
-      <button type="submit" class="modal-submit">Get Free Download →</button>
+      <input type="text" name="name" id="field-name" placeholder="Your Name *" required />
+      <input type="email" name="email" id="field-email" placeholder="Your Email *" required />
+      <button type="submit" class="modal-submit" id="modal-submit-btn">Get Free Download →</button>
       <p class="modal-note">We never share your information.</p>
     </form>
   </div>
@@ -209,15 +192,13 @@
 
 <!-- PREVIEW MODAL -->
 <div class="modal-overlay" id="preview-modal">
-  <div class="preview-modal">
-    <div class="preview-modal-inner">
-      <button class="modal-close" id="preview-close">×</button>
-      <h3 id="preview-title"></h3>
-      <div id="preview-content"></div>
-      <div class="preview-modal-actions">
-        <button class="preview-dl-btn" id="preview-dl-btn">Download This Resource →</button>
-        <button class="preview-cancel-btn" id="preview-cancel">Cancel</button>
-      </div>
+  <div class="preview-modal-box">
+    <button class="modal-close" id="preview-close">×</button>
+    <h3 id="preview-title"></h3>
+    <div id="preview-content"></div>
+    <div class="preview-actions">
+      <button class="preview-dl-btn" id="preview-dl-btn">Download This Resource →</button>
+      <button class="preview-cancel-btn" id="preview-cancel">Close</button>
     </div>
   </div>
 </div>
@@ -257,58 +238,88 @@
 </footer>
 
 <script>
-  // ── RESOURCE DATA ──
-  // This is where your resources live. Add, remove, and reorder by editing this array.
-  // To add a resource: copy one object, fill in the fields, add to the array.
-  // "order" controls position within a folder (lower = first).
-  // "file" is the URL to the actual file (GitHub raw URL or any direct link).
-  // "preview" is optional — use an image URL for a visual preview.
+  const GITHUB_USER = 'preparedpartnersllc';
+  const GITHUB_REPO = 'preparedpartnersllc.com';
+  const RESOURCES_PATH = '_resources';
 
-  const resources = [
-    {
-      id: 1,
-      title: "IAP Cover Sheet",
-      description: "The official Incident Action Plan Cover Sheet. Used to document incident objectives, operational period, and command staff for any emergency incident.",
-      folder: "ICS Forms",
-      type: "doc",
-      file: "https://raw.githubusercontent.com/preparedpartnersllc/preparedpartnersllc.com/main/resources/IAP_Cover_Sheet.doc",
-      preview: null,
-      order: 1
-    }
-  ];
-
-  // ── FILE TYPE CONFIG ──
   const typeConfig = {
-    pdf:  { label:'PDF',  badge:'type-pdf', icon:'📄' },
-    ppt:  { label:'PPT',  badge:'type-ppt', icon:'📊' },
-    doc:  { label:'DOC',  badge:'type-doc', icon:'📝' },
-    img:  { label:'IMG',  badge:'type-img', icon:'🖼' },
-    xls:  { label:'XLS',  badge:'type-xls', icon:'📈' },
-    zip:  { label:'ZIP',  badge:'type-zip', icon:'📦' }
+    pdf:  { label:'PDF',  badge:'type-pdf',  icon:'📄' },
+    docx: { label:'DOCX', badge:'type-docx', icon:'📝' },
+    pptx: { label:'PPTX', badge:'type-pptx', icon:'📊' },
+    xlsx: { label:'XLSX', badge:'type-xlsx', icon:'📈' },
+    img:  { label:'IMG',  badge:'type-img',  icon:'🖼' },
+    zip:  { label:'ZIP',  badge:'type-zip',  icon:'📦' }
   };
 
-  // ── STATE ──
+  let allResources = [];
   let currentFolder = 'all';
-  let pendingDownload = null;
+  let pendingResource = null;
 
-  // ── BUILD FOLDERS ──
-  function getFolders() {
-    const folders = ['All'];
-    resources.forEach(r => { if (!folders.includes(r.folder)) folders.push(r.folder); });
-    return folders;
+  // ── MEMORY ──
+  function isSubscribed() { return localStorage.getItem('pp_subscribed') === 'true'; }
+  function setSubscribed(email, name) {
+    localStorage.setItem('pp_subscribed', 'true');
+    localStorage.setItem('pp_email', email);
+    localStorage.setItem('pp_name', name || '');
   }
 
-  function countFolder(folder) {
-    if (folder === 'All') return resources.length;
-    return resources.filter(r => r.folder === folder).length;
+  // ── PARSE FRONTMATTER ──
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) return {};
+    const fm = {};
+    match[1].split('\n').forEach(line => {
+      const col = line.indexOf(':');
+      if (col === -1) return;
+      const key = line.slice(0, col).trim();
+      let val = line.slice(col + 1).trim().replace(/^["']|["']$/g, '');
+      fm[key] = val;
+    });
+    return fm;
+  }
+
+  // ── LOAD RESOURCES FROM GITHUB ──
+  async function loadResources() {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/${RESOURCES_PATH}`);
+      if (!res.ok) throw new Error('No resources folder');
+      const files = await res.json();
+      if (!Array.isArray(files) || files.length === 0) throw new Error('Empty');
+
+      const parsed = await Promise.all(
+        files.filter(f => f.name.endsWith('.md')).map(async file => {
+          const r = await fetch(file.download_url);
+          const text = await r.text();
+          return { ...parseFrontmatter(text), slug: file.name.replace('.md','') };
+        })
+      );
+
+      allResources = parsed.sort((a,b) => (parseInt(a.order)||1) - (parseInt(b.order)||1));
+      renderFolderTabs();
+      renderGrid();
+
+    } catch(e) {
+      document.getElementById('loading-msg').textContent = 'No resources found. Check back soon.';
+    }
+  }
+
+  // ── FOLDER TABS ──
+  function getFolders() {
+    const seen = new Set();
+    allResources.forEach(r => r.folder && seen.add(r.folder));
+    return [...seen];
   }
 
   function renderFolderTabs() {
     const tabs = document.getElementById('folder-tabs');
-    tabs.innerHTML = getFolders().map(folder => `
-      <button class="folder-tab ${folder === 'All' ? 'active' : ''}" data-folder="${folder}">
-        📁 ${folder} <span class="count">${countFolder(folder)}</span>
-      </button>`).join('');
+    const folders = getFolders();
+    const allCount = allResources.length;
+    let html = `<button class="folder-tab active" data-folder="all">📁 All Resources <span class="count">${allCount}</span></button>`;
+    folders.forEach(f => {
+      const count = allResources.filter(r => r.folder === f).length;
+      html += `<button class="folder-tab" data-folder="${f}">📁 ${f} <span class="count">${count}</span></button>`;
+    });
+    tabs.innerHTML = html;
     tabs.querySelectorAll('.folder-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         tabs.querySelectorAll('.folder-tab').forEach(b => b.classList.remove('active'));
@@ -319,134 +330,118 @@
     });
   }
 
-  // ── BUILD GRID ──
-  function getFiltered() {
-    let filtered = currentFolder === 'All' ? [...resources] : resources.filter(r => r.folder === currentFolder);
-    return filtered.sort((a,b) => a.order - b.order);
-  }
-
+  // ── RENDER GRID ──
   function renderGrid() {
     const grid = document.getElementById('resource-grid');
-    const filtered = getFiltered();
+    const filtered = currentFolder === 'all'
+      ? allResources
+      : allResources.filter(r => r.folder === currentFolder);
+
     if (!filtered.length) {
       grid.innerHTML = '<div class="empty">No resources in this folder yet.</div>';
       return;
     }
-    grid.innerHTML = filtered.map(r => {
-      const t = typeConfig[r.type] || { label:'FILE', badge:'type-pdf', icon:'📄' };
-      const previewArea = r.preview
+
+    const t = (type) => typeConfig[type] || { label:'FILE', badge:'type-pdf', icon:'📄' };
+
+    grid.innerHTML = filtered.map((r, i) => {
+      const tc = t(r.filetype);
+      const thumb = r.preview
         ? `<img src="${r.preview}" alt="${r.title}" style="width:100%;height:100%;object-fit:cover;" />`
-        : `<div class="preview-icon">${t.icon}</div>`;
+        : `<div class="preview-icon">${tc.icon}</div>`;
       return `
-        <div class="resource-card" data-id="${r.id}">
-          <div class="resource-preview" onclick="openPreview(${r.id})">
-            ${previewArea}
-            <span class="file-type-badge ${t.badge}">${t.label}</span>
-            <div class="preview-overlay"><span>Preview</span></div>
+        <div class="resource-card">
+          <div class="resource-preview" onclick="openPreview('${r.slug}')">
+            ${thumb}
+            <span class="file-badge ${tc.badge}">${tc.label}</span>
+            <div class="preview-overlay"><span>👁 Preview</span></div>
           </div>
           <div class="resource-body">
-            <div class="resource-folder">${r.folder}</div>
-            <h3>${r.title}</h3>
-            <p>${r.description}</p>
+            <div class="resource-folder-label">${r.folder || ''}</div>
+            <h3>${r.title || ''}</h3>
+            <p>${r.description || ''}</p>
           </div>
           <div class="resource-footer">
-            <button class="download-btn" onclick="openEmailModal(${r.id})">
-              ↓ &nbsp;Free Download
-            </button>
+            <button class="download-btn" onclick="handleDownload('${r.slug}')">↓ &nbsp;Free Download</button>
           </div>
         </div>`;
     }).join('');
   }
 
-  // ── PREVIEW MODAL ──
-  function openPreview(id) {
-    const r = resources.find(x => x.id === id);
+  // ── PREVIEW ──
+  function openPreview(slug) {
+    const r = allResources.find(x => x.slug === slug);
     if (!r) return;
-    const t = typeConfig[r.type] || { icon:'📄' };
+    const tc = typeConfig[r.filetype] || { icon:'📄', label:'FILE' };
     document.getElementById('preview-title').textContent = r.title;
+
     const content = document.getElementById('preview-content');
+    const fileUrl = r.fileurl;
 
     if (r.preview && r.preview.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
-      // Image preview
-      content.innerHTML = `<img src="${r.preview}" alt="${r.title}" style="width:100%;border-radius:4px;" />`;
-    } else if (r.file && r.file !== '#' && r.type === 'pdf') {
-      // PDF — embed directly
-      content.innerHTML = `<iframe src="${r.file}" style="width:100%;height:420px;border:none;border-radius:4px;" title="${r.title}"></iframe>`;
-    } else if (r.file && r.file !== '#') {
-      // Word, PPT, Excel — use Google Docs viewer
-      const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(r.file)}&embedded=true`;
-      content.innerHTML = `<iframe src="${viewerUrl}" style="width:100%;height:420px;border:none;border-radius:4px;" title="${r.title}"></iframe>`;
+      content.innerHTML = `<img src="${r.preview}" alt="${r.title}" />`;
+    } else if (fileUrl && fileUrl !== '#' && r.filetype === 'pdf') {
+      content.innerHTML = `<iframe src="${fileUrl}" title="${r.title}"></iframe>`;
+    } else if (fileUrl && fileUrl !== '#' && ['docx','pptx','xlsx'].includes(r.filetype)) {
+      const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(fileUrl)}&embedded=true`;
+      content.innerHTML = `<iframe src="${viewerUrl}" title="${r.title}"></iframe>`;
     } else {
-      // No file yet — placeholder
       content.innerHTML = `
-        <div class="preview-modal-placeholder">
-          <div class="big-icon">${t.icon}</div>
+        <div class="preview-placeholder">
+          <div class="big-icon">${tc.icon}</div>
           <p>${r.title}</p>
-          <p style="font-size:0.75rem;">${r.folder} · ${(typeConfig[r.type]||{}).label||'FILE'}</p>
+          <p style="font-size:0.75rem;">${r.folder} · ${tc.label}</p>
         </div>`;
     }
 
     document.getElementById('preview-dl-btn').onclick = () => {
-      closePreviewModal();
-      openEmailModal(id);
+      closePreview();
+      handleDownload(slug);
     };
     document.getElementById('preview-modal').classList.add('open');
   }
 
-  function closePreviewModal() {
-    document.getElementById('preview-modal').classList.remove('open');
-  }
+  function closePreview() { document.getElementById('preview-modal').classList.remove('open'); }
+  document.getElementById('preview-close').addEventListener('click', closePreview);
+  document.getElementById('preview-cancel').addEventListener('click', closePreview);
+  document.getElementById('preview-modal').addEventListener('click', e => { if (e.target === document.getElementById('preview-modal')) closePreview(); });
 
-  document.getElementById('preview-close').addEventListener('click', closePreviewModal);
-  document.getElementById('preview-cancel').addEventListener('click', closePreviewModal);
-
-  // ── EMAIL MODAL ──
-  function openEmailModal(id) {
-    const r = resources.find(x => x.id === id);
+  // ── DOWNLOAD FLOW ──
+  function handleDownload(slug) {
+    const r = allResources.find(x => x.slug === slug);
     if (!r) return;
-    pendingDownload = r;
+    pendingResource = r;
+
+    if (isSubscribed()) {
+      triggerDownload(r);
+      return;
+    }
+
     document.getElementById('modal-resource-name').textContent = '📄 ' + r.title;
     document.getElementById('form-resource-name').value = r.title;
     document.getElementById('email-modal').classList.add('open');
   }
 
-  document.getElementById('modal-close').addEventListener('click', () => {
-    document.getElementById('email-modal').classList.remove('open');
-  });
-
-  // ── CHECK IF ALREADY SUBSCRIBED ──
-  function isSubscribed() {
-    return localStorage.getItem('pp_subscribed') === 'true';
-  }
-
-  function setSubscribed(email, name) {
-    localStorage.setItem('pp_subscribed', 'true');
-    localStorage.setItem('pp_email', email);
-    localStorage.setItem('pp_name', name);
-  }
-
-  // ── TRIGGER DOWNLOAD ──
-  async function triggerDownload(resource) {
-    if (!resource || !resource.file || resource.file === '#') {
-      alert('Download link coming soon! Check back shortly.');
+  async function triggerDownload(r) {
+    if (!r || !r.fileurl || r.fileurl === '#') {
+      alert('Download link coming soon.');
       return;
     }
     try {
-      const response = await fetch(resource.file);
+      const response = await fetch(r.fileurl);
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = resource.title + '.' + resource.type;
+      a.download = r.title + '.' + (r.filetype || 'file');
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     } catch(e) {
-      // Fallback if fetch fails
       const a = document.createElement('a');
-      a.href = resource.file;
-      a.download = resource.title;
+      a.href = r.fileurl;
+      a.download = r.title;
       a.target = '_blank';
       document.body.appendChild(a);
       a.click();
@@ -454,75 +449,50 @@
     }
   }
 
-  // ── OPEN EMAIL MODAL OR SKIP IF ALREADY SUBSCRIBED ──
-  function openEmailModal(id) {
-    const r = resources.find(x => x.id === id);
-    if (!r) return;
-    pendingDownload = r;
+  // ── EMAIL FORM ──
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('email-modal').classList.remove('open');
+  });
+  document.getElementById('email-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('email-modal')) document.getElementById('email-modal').classList.remove('open');
+  });
 
-    if (isSubscribed()) {
-      // Already subscribed — download immediately
-      triggerDownload(r);
-      pendingDownload = null;
-      return;
-    }
-
-    document.getElementById('modal-resource-name').textContent = '📄 ' + r.title;
-    document.getElementById('form-resource-name').value = r.title;
-    document.getElementById('email-modal').classList.add('open');
-  }
-
-  // ── FORM SUBMIT ──
   document.getElementById('download-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = e.target;
-    const nameVal = form.querySelector('input[name="name"]').value.trim();
-    const emailVal = form.querySelector('input[name="email"]').value.trim();
-    const resourceName = form.querySelector('input[name="resource"]').value;
-    const btn = form.querySelector('.modal-submit');
-
+    const nameVal = document.getElementById('field-name').value.trim();
+    const emailVal = document.getElementById('field-email').value.trim();
+    const btn = document.getElementById('modal-submit-btn');
     btn.textContent = 'Getting your download...';
     btn.disabled = true;
 
+    // Mailchimp via Netlify function
     try {
-      // Add to Mailchimp via Netlify function
       await fetch('/.netlify/functions/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ email: emailVal, name: nameVal })
       });
-    } catch(err) { /* proceed regardless */ }
-
-    // Also submit to Netlify Forms for backup
-    try {
-      const data = new FormData(form);
-      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(data).toString() });
     } catch(err) {}
 
-    // Remember this visitor
-    setSubscribed(emailVal, nameVal);
+    // Netlify Forms backup
+    try {
+      const fd = new FormData(this);
+      await fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams(fd).toString() });
+    } catch(err) {}
 
+    setSubscribed(emailVal, nameVal);
     document.getElementById('email-modal').classList.remove('open');
-    form.reset();
+    this.reset();
     btn.textContent = 'Get Free Download →';
     btn.disabled = false;
 
-    // Trigger download
-    triggerDownload(pendingDownload);
-    pendingDownload = null;
+    if (pendingResource) {
+      triggerDownload(pendingResource);
+      pendingResource = null;
+    }
   });
 
-  // Close modals on overlay click
-  document.getElementById('email-modal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('open');
-  });
-  document.getElementById('preview-modal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('open');
-  });
-
-  // ── INIT ──
-  renderFolderTabs();
-  renderGrid();
+  loadResources();
 </script>
 </body>
 </html>
